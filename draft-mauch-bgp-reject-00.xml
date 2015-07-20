@@ -5,7 +5,7 @@
      for the reference element, and is used much later in the file.  This XML contains an
      anchor (also RFC2629) which can be used to cross-reference this item in the text.
      You can also use local file names instead of a URI.  The environment variable
-     XML_LIBRARY provides a search path of directories to look at to locate a 
+     XML_LIBRARY provides a search path of directories to look at to locate a
      relative path name for the file. There has to be one entity for each item to be
      referenced. -->
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
@@ -33,12 +33,9 @@
 
 <front>
 
-    <title abbrev="BGP-DEFAULT-REJECT">Require BGP implementers to advertise no routes</title>
+    <title abbrev="BGP-DEFAULT-REJECT">By default reject propagation when no policy is associated with a BGP peering session.</title>
 
-    <author
-        fullname="Jared Mauch" 
-        initials="J." 
-        surname="Mauch">
+    <author fullname="Jared Mauch" initials="J." surname="Mauch">
         <organization abbrev="NTT">NTT Communications, Inc.</organization>
         <address>
             <postal>
@@ -47,7 +44,7 @@
                 <city>Ann Arbor</city>
                 <country>US</country>
             </postal>
-        	<email>jmauch@us.ntt.net</email>
+            <email>jmauch@us.ntt.net</email>
         </address>
     </author>
 
@@ -69,13 +66,13 @@
 
 
     <date year="2015" month="July"/>
-         
-    <area>Routing</area>
 
+    <area>Routing</area>
     <workgroup>Internet Engineering Task Force</workgroup>
-        
+
     <abstract>
-        <t>This document describes a solution to a common routing security problem inherent in vendors with their security practices.</t>
+           <t>This document defines the default behaviour of a BGP speaker when
+            no explicit policy is associated with a BGP peering session.</t>
     </abstract>
 
     <note title="Foreword">
@@ -96,12 +93,33 @@
 
 <middle>
     <section anchor="Introduction" title="Introduction">
-        <t>BGP speaking devices have many default settings which need to be revisited as part of improving the routing ecosystem.  There is a need to provide guidace to BGP implementors for the default behaviors of a well functioning internet ecosystem.  Routing leaks <xref target="RL" /> are part of the problem, but software defects and operator misconfigurations are just a few of the attacks on internet stability we aim to address.</t>
-        <t>Usually BGP speaking devices accept all routes from a configured peer or neighbor.  This practice dates back to the early days of internet protocols in being very permissive in offering routing information to allow all networks to reach each other.  With the core of the internet becoming more densely interconnected the risk of a misbehaving edge device or BGP speaking customer poses signficiant risks to the reachability of critical services.</t>
+<t>
+    BGP speakers have many default settings which need to be revisited
+    as part of improving the routing ecosystem.  There is a need to provide
+    guidace to BGP implementors for the default behaviors of a well functioning
+    internet ecosystem.  Routing leaks <xref target="RL" /> are part of the
+    problem, but software defects and operator misconfigurations are just a few
+    of the attacks on internet stability we aim to address.
+</t>
 
-		<t>This proposal intends to solve this situation with the requiring the explicity configuration of BGP policy for any non-iBGP speaking session such as customers, peers or confederation boundaries. When this solution is implemented, devices will no longer pass routes without explicit policy.</t>
+<t>
+    Usually BGP speakers accept all routes from a configured peer or
+    neighbor. This practice dates back to the early days of internet protocols
+    in being very permissive in offering routing information to allow all
+    networks to reach each other.  With the core of the internet becoming more
+    densely interconnected the risk of a misbehaving edge device or BGP
+    speaking customer poses signficiant risks to the reachability of critical
+    services.
+</t>
+
+<t>
+    This proposal intends to solve this situation with the requiring the
+    explicity configuration of BGP policy for any non-iBGP speaking session
+    such as customers, peers or confederation boundaries. When this solution is
+    implemented, devices will no longer pass routes without explicit
+    policy.
+</t>
     </section>
-
 
     <section anchor="Definition" title="Definitions and Accronyms">
       <t><list style="symbols">
@@ -109,7 +127,6 @@
         </list>
       </t>
     </section>
-
 
     <section anchor="Requirements" title="Solution Requirements">
     	<t>The following requirements apply to the solution described in this document:
@@ -123,7 +140,7 @@
 		  </t>
     </section>
 
-    
+
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>The authors would like to thank the following people for their comments and support: [TBD].</t>
     </section>
@@ -138,7 +155,7 @@
     <references title="Normative References">
         &RFC2119;
         &RFC4271;
-        
+
     </references>
 
     <references title="Informative References">
