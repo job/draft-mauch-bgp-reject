@@ -121,7 +121,7 @@
 </t>
     </section>
 
-    <section anchor="Definition" title="Definitions and Accronyms">
+    <section anchor="Definition" title="Definitions and Acronyms">
       <t><list style="symbols">
 		<t>BGP: Border Gateway Protocol <xref target="RFC4271" /></t>
         </list>
@@ -132,8 +132,8 @@
     	<t>The following requirements apply to the solution described in this document:
         <list style="symbols">
 			<t>Software MUST NOT accept routes from an eBGP peer without an operator configuring a policy</t>
-			<t>Software MUST NOT require a configuration directive to operate in this mode.</t>
 			<t>Software MUST NOT send routes to an eBGP peer without an operator configuring a policy</t>
+                        <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
 			<t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes</t>
 			<t>Software MAY provide a configuration option to disable this security capability.</t>
 			</list>
