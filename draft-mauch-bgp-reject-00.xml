@@ -55,9 +55,9 @@
         <organization abbrev="NTT">NTT Communications, Inc.</organization>
         <address>
             <postal>
-		<street></street>
-		<code></code>
-		<city>Amsterdam</city>
+        <street></street>
+        <code></code>
+        <city>Amsterdam</city>
                 <country>NL</country>
             </postal>
                 <email>job@ntt.net</email>
@@ -123,30 +123,31 @@
 
     <section anchor="Definition" title="Definitions and Acronyms">
       <t><list style="symbols">
-		<t>BGP: Border Gateway Protocol <xref target="RFC4271" /></t>
+        <t>BGP: Border Gateway Protocol <xref target="RFC4271" /></t>
         </list>
       </t>
     </section>
 
     <section anchor="Requirements" title="Solution Requirements">
-    	<t>The following requirements apply to the solution described in this document:
+        <t>The following requirements apply to the solution described in this document:
         <list style="symbols">
-			<t>Software MUST NOT accept routes from an eBGP peer without an operator configuring a policy</t>
-			<t>Software MUST NOT send routes to an eBGP peer without an operator configuring a policy</t>
-                        <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
-			<t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes</t>
-			<t>Software MAY provide a configuration option to disable this security capability.</t>
-			</list>
-		  </t>
+            <t>Software MUST mark any routes from an eBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
+            <t>Software MUST NOT advertise any routes to an eBGP peer without an operator configuring a policy</t>
+            <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
+            <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes</t>
+            <t>Software MAY provide a configuration option to disable this security capability.</t>
+            </list>
+          </t>
     </section>
 
 
     <section anchor="Acknowledgements" title="Acknowledgements">
-      <t>The authors would like to thank the following people for their comments and support: [TBD].</t>
+        <t>The authors would like to thank the following people for their comments and support:
+            Shane Amante, Christopher Morrow, Robert Raszuk.</t>
     </section>
 
     <section anchor="Security" title="Security Considerations">
-		<t>This document addresses the basic security posture of a BGP speaking device within a network. Operators have a need for implementors to address the problem through a behavior change to mitigate against possible attacks from a permissive security posture.  Attacks and inadvertent advertisements cause business impact necessitating this default behavior.</t>
+        <t>This document addresses the basic security posture of a BGP speaking device within a network. Operators have a need for implementors to address the problem through a behavior change to mitigate against possible attacks from a permissive security posture.  Attacks and inadvertent advertisements cause business impact necessitating this default behavior.</t>
     </section>
 </middle>
 
