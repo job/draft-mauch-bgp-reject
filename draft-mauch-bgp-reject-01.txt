@@ -5,12 +5,12 @@
 Internet Engineering Task Force                                 J. Mauch
 Internet-Draft                                               J. Snijders
 Intended status: Standards Track                                     NTT
-Expires: January 2, 2016                                       July 2015
+Expires: May 4, 2016                                    November 1, 2015
 
 
  By default reject propagation when no policy is associated with a BGP
                             peering session.
-                     draft-mauch-bgp-reject-00.txt
+                     draft-mauch-bgp-reject-01.txt
 
 Abstract
 
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 2, 2016.
+   This Internet-Draft will expire on May 4, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Mauch & Snijders         Expires January 2, 2016                [Page 1]
+Mauch & Snijders           Expires May 4, 2016                  [Page 1]
 
-Internet-Draft             BGP-DEFAULT-REJECT                  July 2015
+Internet-Draft             BGP-DEFAULT-REJECT              November 2015
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Mauch & Snijders         Expires January 2, 2016                [Page 2]
+Mauch & Snijders           Expires May 4, 2016                  [Page 2]
 
-Internet-Draft             BGP-DEFAULT-REJECT                  July 2015
+Internet-Draft             BGP-DEFAULT-REJECT              November 2015
 
 
 2.  Definitions and Acronyms
@@ -165,9 +165,9 @@ Internet-Draft             BGP-DEFAULT-REJECT                  July 2015
 
 
 
-Mauch & Snijders         Expires January 2, 2016                [Page 3]
+Mauch & Snijders           Expires May 4, 2016                  [Page 3]
 
-Internet-Draft             BGP-DEFAULT-REJECT                  July 2015
+Internet-Draft             BGP-DEFAULT-REJECT              November 2015
 
 
    [2]        Rekhter, Y., Ed., Li, T., Ed., and S. Hares, Ed., "A
@@ -221,4 +221,4 @@ Authors' Addresses
 
 
 
-Mauch & Snijders         Expires January 2, 2016                [Page 4]
+Mauch & Snijders           Expires May 4, 2016                  [Page 4]
