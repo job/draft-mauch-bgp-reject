@@ -18,7 +18,7 @@
 <rfc
     category="std"
     ipr="trust200902"
-    docName="draft-mauch-bgp-reject-00.txt" >
+    docName="draft-mauch-bgp-reject-01.txt" >
     <?rfc strict="yes" ?>
     <?rfc comments="no" ?>
     <?rfc inline="no" ?>
@@ -65,7 +65,7 @@
     </author>
 
 
-    <date year="2015" month="July"/>
+    <date year="2015" month="November"/>
 
     <area>Routing</area>
     <workgroup>Internet Engineering Task Force</workgroup>
