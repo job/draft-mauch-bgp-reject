@@ -1,35 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-<!-- A set of on-line citation libraries are maintained on the xml2rfc web site.
-     The next line defines an entity named RFC2629, which contains the necessary XML
-     for the reference element, and is used much later in the file.  This XML contains an
-     anchor (also RFC2629) which can be used to cross-reference this item in the text.
-     You can also use local file names instead of a URI.  The environment variable
-     XML_LIBRARY provides a search path of directories to look at to locate a
-     relative path name for the file. There has to be one entity for each item to be
-     referenced. -->
-<!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY RFC4271 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4271.xml">
-<!ENTITY nbsp    "&#160;">
-]>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" []>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocompact="yes"?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
 
-<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-
-<rfc
-    category="std"
-    ipr="trust200902"
-    docName="draft-mauch-bgp-reject-01.txt" >
-    <?rfc strict="yes" ?>
-    <?rfc comments="no" ?>
-    <?rfc inline="no" ?>
-    <?rfc editing="no" ?>
-    <?rfc toc="yes"?>
-    <?rfc tocompact="yes"?>
-    <?rfc tocdepth="3"?>
-    <?rfc symrefs="no"?>
-    <?rfc sortrefs="yes" ?>
-    <?rfc compact="yes" ?>
-    <?rfc subcompact="no" ?>
+<rfc category="std" ipr="trust200902" docName="draft-mauch-bgp-reject-01" submissionType="IETF">
 
 <front>
 
@@ -48,45 +25,28 @@
         </address>
     </author>
 
-    <author
-        fullname="Job Snijders"
-        initials="J."
-        surname="Snijders">
+    <author fullname="Job Snijders" initials="J." surname="Snijders">
         <organization abbrev="NTT">NTT Communications, Inc.</organization>
         <address>
             <postal>
-        <street></street>
-        <code></code>
-        <city>Amsterdam</city>
+                <street></street>
+                <city>Amsterdam</city>
                 <country>NL</country>
             </postal>
-                <email>job@ntt.net</email>
+            <email>job@ntt.net</email>
         </address>
     </author>
 
-
-    <date year="2015" month="November"/>
+    <date year="2015"/>
 
     <area>Routing</area>
-    <workgroup>Internet Engineering Task Force</workgroup>
-
+    <workgroup>Global Routing Operations</workgroup>
+    <keyword>Internet Draft</keyword>
+    <keyword>BGP</keyword>
     <abstract>
            <t>This document defines the default behaviour of a BGP speaker when
             no explicit policy is associated with a BGP peering session.</t>
     </abstract>
-
-    <note title="Foreword">
-        <t>A placeholder to list general observations about this document.</t>
-    </note>
-
-    <note title="Requirements Language">
-        <t>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;,
-        &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
-        &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;,
-        &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be
-        interpreted as described in <xref target="RFC2119">RFC 2119</xref>.
-        </t>
-    </note>
 
 </front>
 
@@ -94,12 +54,12 @@
 <middle>
     <section anchor="Introduction" title="Introduction">
 <t>
-    BGP speakers have many default settings which need to be revisited
+    BGP <xref target="RFC4271" /> speakers have many default settings which need to be revisited
     as part of improving the routing ecosystem.  There is a need to provide
     guidace to BGP implementors for the default behaviors of a well functioning
-    internet ecosystem.  Routing leaks <xref target="RL" /> are part of the
-    problem, but software defects and operator misconfigurations are just a few
-    of the attacks on internet stability we aim to address.
+    internet ecosystem.  Routing leaks <xref target="I-D.ietf-idr-route-leak-detection-mitigation" />
+    are part of the problem, but software defects and operator misconfigurations
+    are just a few of the attacks on internet stability we aim to address.
 </t>
 
 <t>
@@ -121,11 +81,8 @@
 </t>
     </section>
 
-    <section anchor="Definition" title="Definitions and Acronyms">
-      <t><list style="symbols">
-        <t>BGP: Border Gateway Protocol <xref target="RFC4271" /></t>
-        </list>
-      </t>
+    <section title="Requirements Language">
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC 2119</xref>.</t>
     </section>
 
     <section anchor="Requirements" title="Solution Requirements">
@@ -149,30 +106,23 @@
     <section anchor="Security" title="Security Considerations">
         <t>This document addresses the basic security posture of a BGP speaking device within a network. Operators have a need for implementors to address the problem through a behavior change to mitigate against possible attacks from a permissive security posture.  Attacks and inadvertent advertisements cause business impact necessitating this default behavior.</t>
     </section>
+    <section title="IANA Considerations">
+      <t>
+        This document has no actions for IANA.
+      </t>
+    </section>
 </middle>
 
 <back>
 
     <references title="Normative References">
-        &RFC2119;
-        &RFC4271;
-
+        <?rfc include="reference.RFC.2119.xml"?>
+        <?rfc include="reference.RFC.4271.xml"?>
     </references>
 
     <references title="Informative References">
-
-        <reference anchor="RL" target="https://tools.ietf.org/html/draft-sriram-idr-route-leak-detection-mitigation">
-            <front>
-                <title>Methods for Detection and Mitigation of BGP Route Leaks</title>
-                <author>
-                    <organization/>
-                </author>
-                <date/>
-            </front>
-        </reference>
-
+        <?rfc include="reference.I-D.ietf-idr-route-leak-detection-mitigation"?>
     </references>
-
 
 </back>
 
