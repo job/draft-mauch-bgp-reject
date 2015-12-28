@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" []>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocompact="yes"?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
+
+<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-00" submissionType="IETF">
+
+<front>
+
+    <title abbrev="BGP-DEFAULT-REJECT">By default reject propagation when no policy is associated with a BGP peering session.</title>
+
+    <author fullname="Jared Mauch" initials="J." surname="Mauch">
+        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <address>
+            <postal>
+                <street>8285 Reese Lane</street>
+                <code>Michigan 48103</code>
+                <city>Ann Arbor</city>
+                <country>US</country>
+            </postal>
+            <email>jmauch@us.ntt.net</email>
+        </address>
+    </author>
+
+    <author fullname="Job Snijders" initials="J." surname="Snijders">
+        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <address>
+            <postal>
+                <street></street>
+                <city>Amsterdam</city>
+                <country>NL</country>
+            </postal>
+            <email>job@ntt.net</email>
+        </address>
+    </author>
+
+    <date year="2015"/>
+
+    <area>Routing</area>
+    <workgroup>Global Routing Operations</workgroup>
+    <keyword>Internet Draft</keyword>
+    <keyword>BGP</keyword>
+    <abstract>
+           <t>This document defines the default behaviour of a BGP speaker when
+            no explicit policy is associated with a BGP peering session.</t>
+    </abstract>
+
+</front>
+
+
+<middle>
+    <section anchor="Introduction" title="Introduction">
+<t>
+    BGP <xref target="RFC4271" /> speakers have many default settings which need to be revisited
+    as part of improving the routing ecosystem.  There is a need to provide
+    guidace to BGP implementors for the default behaviors of a well functioning
+    internet ecosystem.  Routing leaks <xref target="I-D.ietf-idr-route-leak-detection-mitigation" />
+    are part of the problem, but software defects and operator misconfigurations
+    are just a few of the attacks on internet stability we aim to address.
+</t>
+
+<t>
+    Usually BGP speakers accept all routes from a configured peer or
+    neighbor. This practice dates back to the early days of internet protocols
+    in being very permissive in offering routing information to allow all
+    networks to reach each other.  With the core of the internet becoming more
+    densely interconnected the risk of a misbehaving edge device or BGP
+    speaking customer poses signficiant risks to the reachability of critical
+    services.
+</t>
+
+<t>
+    This proposal intends to solve this situation with the requiring the
+    explicity configuration of BGP policy for any non-iBGP speaking session
+    such as customers, peers or confederation boundaries. When this solution is
+    implemented, devices will no longer pass routes without explicit
+    policy.
+</t>
+    </section>
+
+    <section title="Requirements Language">
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC 2119</xref>.</t>
+    </section>
+
+    <section anchor="Requirements" title="Solution Requirements">
+        <t>The following requirements apply to the solution described in this document:
+        <list style="symbols">
+            <t>Software MUST mark any routes from an eBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
+            <t>Software MUST NOT advertise any routes to an eBGP peer without an operator configuring a policy</t>
+            <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
+            <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes</t>
+            <t>Software MAY provide a configuration option to disable this security capability.</t>
+            </list>
+          </t>
+    </section>
+
+
+    <section anchor="Acknowledgements" title="Acknowledgements">
+        <t>The authors would like to thank the following people for their comments and support:
+            Shane Amante, Christopher Morrow, Robert Raszuk.</t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+        <t>This document addresses the basic security posture of a BGP speaking device within a network. Operators have a need for implementors to address the problem through a behavior change to mitigate against possible attacks from a permissive security posture.  Attacks and inadvertent advertisements cause business impact necessitating this default behavior.</t>
+    </section>
+    <section title="IANA Considerations">
+      <t>
+        This document has no actions for IANA.
+      </t>
+    </section>
+</middle>
+
+<back>
+
+    <references title="Normative References">
+        <?rfc include="reference.RFC.2119.xml"?>
+        <?rfc include="reference.RFC.4271.xml"?>
+    </references>
+
+    <references title="Informative References">
+        <?rfc include="reference.I-D.ietf-idr-route-leak-detection-mitigation"?>
+    </references>
+
+</back>
+
+</rfc>
