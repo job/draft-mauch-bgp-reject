@@ -56,7 +56,7 @@
 <t>
     BGP <xref target="RFC4271" /> speakers have many default settings which need to be revisited
     as part of improving the routing ecosystem.  There is a need to provide
-    guidace to BGP implementors for the default behaviors of a well functioning
+    guidance to BGP implementors for the default behaviors of a well functioning
     internet ecosystem.  Routing leaks <xref target="I-D.ietf-idr-route-leak-detection-mitigation" />
     are part of the problem, but software defects and operator misconfigurations
     are just a few of the attacks on internet stability we aim to address.
@@ -73,11 +73,10 @@
 </t>
 
 <t>
-    This proposal intends to solve this situation with the requiring the
-    explicity configuration of BGP policy for any non-iBGP speaking session
-    such as customers, peers or confederation boundaries. When this solution is
-    implemented, devices will no longer pass routes without explicit
-    policy.
+    This proposal intends to solve this situation by requiring the explicit
+    configuration of BGP policy for any non-iBGP speaking session such as
+    customers, peers or confederation boundaries. When this solution is
+    implemented, devices will no longer pass routes without explicit policy.
 </t>
     </section>
 
@@ -89,9 +88,9 @@
         <t>The following requirements apply to the solution described in this document:
         <list style="symbols">
             <t>Software MUST mark any routes from an eBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
-            <t>Software MUST NOT advertise any routes to an eBGP peer without an operator configuring a policy</t>
+            <t>Software MUST NOT advertise any routes to an eBGP peer without an operator configuring a policy.</t>
             <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
-            <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes</t>
+            <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
             <t>Software MAY provide a configuration option to disable this security capability.</t>
             </list>
           </t>
@@ -100,7 +99,7 @@
 
     <section anchor="Acknowledgements" title="Acknowledgements">
         <t>The authors would like to thank the following people for their comments and support:
-            Shane Amante, Christopher Morrow, Robert Raszuk.</t>
+            Shane Amante, Christopher Morrow, Robert Raszuk, Greg Skinner.</t>
     </section>
 
     <section anchor="Security" title="Security Considerations">
