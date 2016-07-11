@@ -13,7 +13,7 @@
     <title abbrev="BGP-DEFAULT-REJECT">By default reject propagation when no policy is associated with a BGP peering session.</title>
 
     <author fullname="Jared Mauch" initials="J." surname="Mauch">
-        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <organization abbrev="NTT">NTT Communications</organization>
         <address>
             <postal>
                 <street>8285 Reese Lane</street>
@@ -26,7 +26,7 @@
     </author>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
-        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <organization abbrev="NTT">NTT Communications<organization>
         <address>
             <postal>
                 <street>Theodorus Majofskistraat 100</street>
