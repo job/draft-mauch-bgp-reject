@@ -6,14 +6,14 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-01" submissionType="IETF">
+<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-02" submissionType="IETF">
 
 <front>
 
-    <title abbrev="BGP-DEFAULT-REJECT">By default reject propagation when no policy is associated with a BGP peering session.</title>
+    <title abbrev="BGP-DEFAULT-REJECT">By default reject route propagation when no policy is associated with the BGP session.</title>
 
     <author fullname="Jared Mauch" initials="J." surname="Mauch">
-        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <organization abbrev="NTT">NTT Communications</organization>
         <address>
             <postal>
                 <street>8285 Reese Lane</street>
@@ -26,7 +26,7 @@
     </author>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
-        <organization abbrev="NTT">NTT Communications, Inc.</organization>
+        <organization abbrev="NTT">NTT Communications</organization>
         <address>
             <postal>
                 <street>Theodorus Majofskistraat 100</street>
@@ -38,7 +38,7 @@
         </address>
     </author>
 
-    <date year="2016"/>
+    <date year="2016" month="August"/>
 
     <area>Routing</area>
     <workgroup>Global Routing Operations</workgroup>
