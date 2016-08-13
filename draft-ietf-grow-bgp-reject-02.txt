@@ -117,20 +117,19 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
    o  Software MUST NOT advertise any routes to an eBGP peer without the
       operator configuring a policy.
 
-   o  Software MUST NOT require a configuration directive to operate in
-      this mode.
-
    o  Software MUST provide protection from internal failures preventing
       the advertisement and acceptance of routes.
 
    o  Software MAY provide a configuration option to disable this
       security capability.
 
+   o  Software MUST operate in this mode by default.
+
 3.  Acknowledgements
 
    The authors would like to thank the following people for their
-   comments and support: Shane Amante, Christopher Morrow, Robert
-   Raszuk and Greg Skinner.
+   comments and support: Shane Amante, Christopher Morrow, Robert Raszuk
+   and Greg Skinner.
 
 4.  Security Considerations
 
@@ -158,6 +157,7 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
               Border Gateway Protocol 4 (BGP-4)", RFC 4271,
               DOI 10.17487/RFC4271, January 2006,
               <http://www.rfc-editor.org/info/rfc4271>.
+
 
 
 

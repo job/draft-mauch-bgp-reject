@@ -101,9 +101,9 @@
                 <list style="symbols">
                     <t>Software MUST mark any routes from an eBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an eBGP peer without the operator configuring a policy.</t>
-                    <t>Software MUST NOT require a configuration directive to operate in this mode.</t>
                     <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
+                    <t>Software MUST operate in this mode by default.</t>
                 </list>
             </t>
         </section>
