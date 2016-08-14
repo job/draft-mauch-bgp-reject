@@ -34,11 +34,24 @@
                     <city>Amsterdam</city>
                     <country>NL</country>
                 </postal>
-                <email>job@ntt.net</email>
-            </address>
-        </author>
+				<email>job@ntt.net</email>
+			</address>
+		</author>
 
-        <date year="2016" month="August"/>
+        <author fullname="Ondrej Filip" initials="O." surname="Filip">
+			<organization abbrev="CZ.NIC">CZ.NIC</organization>
+			<address>
+				<postal>
+					<street>Milešovská 5</street>
+					<code>13000</code>
+					<city>Prague</city>
+					<country>CZ</country>
+				</postal>
+				<email>ondrej.filip@nic.cz</email>
+			</address>
+		</author>
+
+		<date year="2016" month="August"/>
 
         <area>Routing</area>
         <workgroup>Global Routing Operations</workgroup>
