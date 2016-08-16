@@ -130,7 +130,7 @@
                 <list style="symbols">
                     <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no import policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
-                    <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
+                    <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
                     <t>Software MUST operate in this mode by default.</t>
                 </list>
