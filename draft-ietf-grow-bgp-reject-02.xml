@@ -10,7 +10,7 @@
 
     <front>
 
-        <title abbrev="BGP-DEFAULT-REJECT">By default reject route propagation when no policy is associated with the BGP session.</title>
+        <title abbrev="BGP-DEFAULT-REJECT">Default EBGP Route Propagation Behavior Without Policies</title>
 
         <author fullname="Jared Mauch" initials="J." surname="Mauch">
             <organization abbrev="NTT">NTT Communications</organization>
