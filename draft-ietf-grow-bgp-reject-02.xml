@@ -117,7 +117,7 @@
             <t>
                 This specification intends to solve this situation by
                 requiring the explicit configuration of a BGP import
-                and export policy for any eBGP speaking session such as
+                and export policy for any EBGP speaking session such as
                 customers, peers, or confederation boundaries in a base
                 router or VPN instances.  When this solution is implemented,
                 devices will no longer accept or send routes without an
@@ -128,8 +128,8 @@
         <section anchor="Requirements" title="Solution Requirements">
             <t>The following requirements apply to the solution described in this document:
                 <list style="symbols">
-                    <t>Software MUST mark any routes from an eBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
-                    <t>Software MUST NOT advertise any routes to an eBGP peer without the operator configuring a policy.</t>
+                    <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
+                    <t>Software MUST NOT advertise any routes to an EBGP peer without the operator configuring a policy.</t>
                     <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
                     <t>Software MUST operate in this mode by default.</t>
