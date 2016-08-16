@@ -73,7 +73,7 @@
         <keyword>BGP</keyword>
         <abstract>
             <t>
-                This document defines the default behaviour of a BGP speaker
+                This document defines the default behavior of a BGP speaker
                 when no explicit policy is associated with a BGP session. 
             </t>
         </abstract>
@@ -95,22 +95,22 @@
                 BGP <xref target="RFC4271" /> speakers have many default
                 settings which need to be revisited as part of improving the
                 routing ecosystem.  There is a need to provide guidance to BGP
-                implementors for the default behaviors of a well functioning
-                internet ecosystem.  Routing leaks
+                implementers for the default behaviors of a well functioning
+                Internet ecosystem.  Routing leaks
                 <xref target="I-D.ietf-idr-route-leak-detection-mitigation" />
                 are part of the problem, but software defects and operator
-                misconfigurations are just a few of the attacks on internet
+                misconfigurations are just a few of the attacks on Internet
                 stability we aim to address.
             </t>
 
             <t>
                 Usually BGP speakers accept all routes from a configured peer
                 or neighbor. This practice dates back to the early days of
-                internet protocols in being very permissive in offering routing
+                Internet protocols in being very permissive in offering routing
                 information to allow all networks to reach each other.  With
-                the core of the internet becoming more densely interconnected
+                the core of the Internet becoming more densely interconnected
                 the risk of a misbehaving edge device or BGP speaking customer
-                poses signficiant risks to the reachability of critical
+                poses significant risks to the reachability of critical
                 services.
             </t>
 
@@ -136,7 +136,7 @@
         </section>
 
 
-        <section anchor="Acknowledgements" title="Acknowledgements">
+        <section anchor="Acknowledgments" title="Acknowledgments">
             <t>
                 The authors would like to thank the following people for their
                 comments and support: Shane Amante, Christopher Morrow, Robert
@@ -148,7 +148,7 @@
             <t>
                 This document addresses the basic security posture of a BGP
                 speaking device within a network. Operators have a need for
-                implementors to address the problem through a behavior change
+                implementers to address the problem through a behavior change
                 to mitigate against possible attacks from a permissive security
                 posture.  Attacks and inadvertent advertisements cause business
                 impact necessitating this default behavior.
