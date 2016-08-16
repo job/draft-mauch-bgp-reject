@@ -74,8 +74,8 @@
         <abstract>
             <t>
                 This document defines the default behavior of a BGP speaker
-                when no import or export policy is associated with a
-                BGP session.
+                when there is no import or export policy is associated
+                with a BGP session.
             </t>
         </abstract>
 
@@ -105,7 +105,7 @@
             </t>
 
             <t>
-                Many BGP speakers accept all routes from a neighbor by
+                Many BGP speakers send and accept all routes from a peer by
                 default. This practice dates back to the early days of the
                 Internet, where operators were permissive in offering routing
                 information to allow all networks to reach each other. As
