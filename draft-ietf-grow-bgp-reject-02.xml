@@ -74,7 +74,8 @@
         <abstract>
             <t>
                 This document defines the default behavior of a BGP speaker
-                when no explicit policy is associated with a BGP session. 
+                when no import or export policy is associated with a
+                BGP session.
             </t>
         </abstract>
 
@@ -104,32 +105,31 @@
             </t>
 
             <t>
-                Usually BGP speakers accept all routes from a configured peer
-                or neighbor. This practice dates back to the early days of
-                Internet protocols in being very permissive in offering routing
-                information to allow all networks to reach each other.  With
-                the core of the Internet becoming more densely interconnected
-                the risk of a misbehaving edge device or BGP speaking customer
-                poses significant risks to the reachability of critical
-                services.
+                Many BGP speakers accept all routes from a neighbor by
+                default. This practice dates back to the early days of the
+                Internet, where operators were permissive in offering routing
+                information to allow all networks to reach each other. As
+                the Internet has become more densely interconnected, the
+                risk of a misbehaving BGP speaker poses significant risks
+                to Internet routing.
             </t>
 
             <t>
-                This specification intends to solve this situation by
+                This specification intends to improve this situation by
                 requiring the explicit configuration of a BGP import
-                and export policy for any EBGP speaking session such as
-                customers, peers, or confederation boundaries in a base
-                router or VPN instances.  When this solution is implemented,
-                devices will no longer accept or send routes without an
-                explicit policy.
+                and export policy for any EBGP speaking session such
+                as customers, peers, or confederation boundaries in
+                a base router or VPN instances.  When this solution is
+                implemented, devices will no longer accept or send routes
+                without policies configured on EBGP sessions.
             </t>
         </section>
 
         <section anchor="Requirements" title="Solution Requirements">
             <t>The following requirements apply to the solution described in this document:
                 <list style="symbols">
-                    <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no explicit policy was configured.</t>
-                    <t>Software MUST NOT advertise any routes to an EBGP peer without the operator configuring a policy.</t>
+                    <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no import policy was configured.</t>
+                    <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software MUST provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
                     <t>Software MUST operate in this mode by default.</t>
