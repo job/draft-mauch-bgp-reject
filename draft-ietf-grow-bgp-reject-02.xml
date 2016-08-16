@@ -115,11 +115,13 @@
             </t>
 
             <t>
-                This specification intends to solve this situation by requiring the
-                explicit configuration of BGP policy for any non-iBGP speaking
-                session such as customers, peers or confederation boundaries.
-                When this solution is implemented, devices will no longer pass
-                routes without explicit policy.
+                This specification intends to solve this situation by
+                requiring the explicit configuration of a BGP import
+                and export policy for any eBGP speaking session such as
+                customers, peers, confederation boundaries in a base router
+                or VPN instances.  When this solution is implemented,
+                devices will no longer accept or send routes without an
+                explicit policy.
             </t>
         </section>
 
