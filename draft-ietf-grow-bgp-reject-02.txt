@@ -95,7 +95,7 @@ Table of Contents
    explicit configuration of a BGP import and export policy for any EBGP
    speaking session such as customers, peers, or confederation
    boundaries in a base router or VPN instances.  When this solution is
-   implemented, devices will no longer accept or send routes without
+   implemented, BGP speakers do not accept or send routes without
    policies configured on EBGP sessions.
 
 
@@ -137,12 +137,13 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
 
 4.  Security Considerations
 
-   This document addresses the basic security posture of a BGP speaking
-   device within a network.  Operators have a need for implementers to
-   address the problem through a behavior change to mitigate against
-   possible attacks from a permissive security posture.  Attacks and
-   inadvertent advertisements cause business impact necessitating this
-   default behavior.
+   This document addresses the basic security behavior of how a BGP
+   speaker propagates routes in a default configuration without
+   policies.  Operators have a need for implementers to address the
+   problem through a behavior change to mitigate against possible
+   attacks from a permissive security behavior.  Attacks and inadvertent
+   advertisements cause business impact that can be mitigated by a
+   secure default behavior.
 
 5.  IANA Considerations
 
@@ -156,7 +157,6 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
-
 
 
 
