@@ -114,13 +114,13 @@
             </t>
 
             <t>
-                This specification intends to improve this situation by
-                requiring the explicit configuration of a BGP import
-                and export policy for any EBGP speaking session such
-                as customers, peers, or confederation boundaries in
-                a base router or VPN instances.  When this solution is
-                implemented, devices will no longer accept or send routes
-                without policies configured on EBGP sessions.
+                This specification intends to improve this situation
+                by requiring the explicit configuration of a BGP import
+                and export policy for any EBGP speaking session such as
+                customers, peers, or confederation boundaries in a base
+                router or VPN instances.  When this solution is implemented,
+                BGP speakers do not accept or send routes without policies
+                configured on EBGP sessions.
             </t>
         </section>
 
@@ -147,12 +147,13 @@
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                This document addresses the basic security posture of a BGP
-                speaking device within a network. Operators have a need for
-                implementers to address the problem through a behavior change
-                to mitigate against possible attacks from a permissive security
-                posture.  Attacks and inadvertent advertisements cause business
-                impact necessitating this default behavior.
+                This document addresses the basic security behavior of how
+                a BGP speaker propagates routes in a default configuration
+                without policies. Operators have a need for implementers to
+                address the problem through a behavior change to mitigate
+                against possible attacks from a permissive security behavior.
+                Attacks and inadvertent advertisements cause business
+                impact that can be mitigated by a secure default behavior.
             </t>
         </section>
 
