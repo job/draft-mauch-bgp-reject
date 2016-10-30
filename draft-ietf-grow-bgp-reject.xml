@@ -56,8 +56,9 @@
 
         <area>Routing</area>
         <workgroup>Global Routing Operations</workgroup>
-        <keyword>Internet Draft</keyword>
+        <keyword>reject</keyword>
         <keyword>BGP</keyword>
+
         <abstract>
             <t>
                 This document defines the default behavior of a BGP speaker
