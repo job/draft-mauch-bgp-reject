@@ -10,7 +10,7 @@
 
     <front>
 
-        <title abbrev="BGP-DEFAULT-REJECT">Default EBGP Route Propagation Behavior Without Policies</title>
+        <title abbrev="BGP Default Reject">Default IPv4 and IPv6 Unicast EBGP Route Propagation Behavior Without Policies</title>
 
         <author fullname="Jared Mauch" initials="J." surname="Mauch">
             <organization abbrev="NTT">NTT Communications</organization>
@@ -75,7 +75,7 @@
             <t>
                 This document defines the default behavior of a BGP speaker
                 when there is no import or export policy is associated
-                with a BGP session.
+                with a BGP session for the IPv4 or IPv6 address family.
             </t>
         </abstract>
 
@@ -125,7 +125,10 @@
         </section>
 
         <section anchor="Requirements" title="Solution Requirements">
-            <t>The following requirements apply to the solution described in this document:
+            <t>
+                The following requirements for the IPv4 and IPv6 Unicast
+                Address Family apply to the solution described in this
+                document:
                 <list style="symbols">
                     <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no import policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
@@ -141,7 +144,7 @@
             <t>
                 The authors would like to thank the following people for their
                 comments and support: Shane Amante, Christopher Morrow, Robert
-                Raszuk and Greg Skinner.
+                Raszuk, Greg Skinner, and Adam Chappell.
             </t>
         </section>
 
