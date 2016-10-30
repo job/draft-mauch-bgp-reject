@@ -38,15 +38,6 @@
 			</address>
 		</author>
 
-        <author fullname="Ondrej Filip" initials="O." surname="Filip">
-			<organization abbrev="CZ.NIC">CZ.NIC</organization>
-			<address>
-				<postal>
-					<street>Milešovská 5</street>
-					<code>13000</code>
-					<city>Prague</city>
-					<country>CZ</country>
-				</postal>
 				<email>ondrej.filip@nic.cz</email>
 			</address>
 		</author>
@@ -186,9 +177,9 @@ Email: jheitz@cisco.com
             <preamble></preamble>
             <artwork>
 Ondrej Filip
-NIC.CZ
+CZ.NIC
 
-Email: feela@network.cz
+Email: ondrej.filip@nic.cz
 </artwork>
             <postamble></postamble>
         </figure>
