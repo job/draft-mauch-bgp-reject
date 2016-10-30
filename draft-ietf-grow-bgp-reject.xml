@@ -130,7 +130,7 @@
                 Address Family apply to the solution described in this
                 document:
                 <list style="symbols">
-                    <t>Software MUST mark any routes from an EBGP peer as 'invalid' in the Adj-RIB-In, if no import policy was configured.</t>
+                    <t>Software MUST consider any routes from an EBGP peer as invalid, if no import policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
@@ -165,6 +165,32 @@
                 This document has no actions for IANA.
             </t>
         </section>
+
+        <section title="Contributors">
+        <t>
+            The following people contributed to success of this document:
+        </t>
+        <figure>
+            <preamble></preamble>
+            <artwork>
+Jakob Heitz
+Cisco
+
+Email: jheitz@cisco.com
+</artwork>
+            <postamble></postamble>
+        </figure>
+        <figure>
+            <preamble></preamble>
+            <artwork>
+Ondrej Filip
+NIC.CZ
+
+Email: feela@network.cz
+</artwork>
+            <postamble></postamble>
+        </figure>
+    </section>
 
     </middle>
 
