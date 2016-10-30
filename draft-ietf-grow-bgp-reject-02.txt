@@ -1,20 +1,24 @@
+
+
+
+
 Global Routing Operations                                       J. Mauch
 Internet-Draft                                               J. Snijders
 Intended status: Standards Track                                     NTT
-Expires: February 18, 2017                                      O. Filip
-                                                                  CZ.NIC
-                                                              G. Hankins
+Expires: May 3, 2017                                          G. Hankins
                                                                    Nokia
-                                                         August 17, 2016
+                                                        October 30, 2016
 
 
-        Default EBGP Route Propagation Behavior Without Policies
+ Default IPv4 and IPv6 Unicast EBGP Route Propagation Behavior Without
+                                Policies
                      draft-ietf-grow-bgp-reject-02
 
 Abstract
 
    This document defines the default behavior of a BGP speaker when
-   there is no import or export policy is associated with a BGP session.
+   there is no import or export policy is associated with a BGP session
+   for the IPv4 or IPv6 Unicast address family.
 
 Requirements Language
 
@@ -37,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 18, 2017.
+   This Internet-Draft will expire on May 3, 2017.
 
 Copyright Notice
 
@@ -49,9 +53,9 @@ Copyright Notice
 
 
 
-Mauch, et al.           Expires February 18, 2017               [Page 1]
+Mauch, et al.              Expires May 3, 2017                  [Page 1]
 
-Internet-Draft             BGP-DEFAULT-REJECT                August 2016
+Internet-Draft             BGP Default Reject               October 2016
 
 
    (http://trustee.ietf.org/license-info) in effect on the date of
@@ -69,9 +73,10 @@ Table of Contents
    3.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   3
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   3
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   3
-   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   3
-     6.1.  Normative References  . . . . . . . . . . . . . . . . . .   3
-     6.2.  Informative References  . . . . . . . . . . . . . . . . .   4
+   6.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .   3
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   4
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   4
 
 1.  Introduction
@@ -104,19 +109,18 @@ Table of Contents
 
 
 
-
-Mauch, et al.           Expires February 18, 2017               [Page 2]
+Mauch, et al.              Expires May 3, 2017                  [Page 2]
 
-Internet-Draft             BGP-DEFAULT-REJECT                August 2016
+Internet-Draft             BGP Default Reject               October 2016
 
 
 2.  Solution Requirements
 
-   The following requirements apply to the solution described in this
-   document:
+   The following requirements for the IPv4 and IPv6 Unicast Address
+   Family apply to the solution described in this document:
 
-   o  Software MUST mark any routes from an EBGP peer as 'invalid' in
-      the Adj-RIB-In, if no import policy was configured.
+   o  Software MUST consider any routes from an EBGP peer as invalid, if
+      no import policy was configured.
 
    o  Software MUST NOT advertise any routes to an EBGP peer, if no
       export policy was configured.
@@ -132,8 +136,9 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
 3.  Acknowledgments
 
    The authors would like to thank the following people for their
-   comments and support: Shane Amante, Christopher Morrow, Robert Raszuk
-   and Greg Skinner.
+   comments, support and review: Shane Amante, Christopher Morrow,
+   Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi, and
+   Brian Dickson.
 
 4.  Security Considerations
 
@@ -149,29 +154,47 @@ Internet-Draft             BGP-DEFAULT-REJECT                August 2016
 
    This document has no actions for IANA.
 
-6.  References
+6.  Contributors
 
-6.1.  Normative References
+   The following people contributed to successful deployment of solution
+   described in this document:
+
+
+
+
+
+
+
+Mauch, et al.              Expires May 3, 2017                  [Page 3]
+
+Internet-Draft             BGP Default Reject               October 2016
+
+
+   Jakob Heitz
+   Cisco
+
+   Email: jheitz@cisco.com
+
+   Ondrej Filip
+   CZ.NIC
+
+   Email: ondrej.filip@nic.cz
+
+7.  References
+
+7.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
 
-
-
-
-Mauch, et al.           Expires February 18, 2017               [Page 3]
-
-Internet-Draft             BGP-DEFAULT-REJECT                August 2016
-
-
    [RFC4271]  Rekhter, Y., Ed., Li, T., Ed., and S. Hares, Ed., "A
               Border Gateway Protocol 4 (BGP-4)", RFC 4271,
               DOI 10.17487/RFC4271, January 2006,
               <http://www.rfc-editor.org/info/rfc4271>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [RFC7908]  Sriram, K., Montgomery, D., McPherson, D., Osterweil, E.,
               and B. Dickson, "Problem Definition and Classification of
@@ -189,6 +212,20 @@ Authors' Addresses
    Email: jmauch@us.ntt.net
 
 
+
+
+
+
+
+
+
+
+
+Mauch, et al.              Expires May 3, 2017                  [Page 4]
+
+Internet-Draft             BGP Default Reject               October 2016
+
+
    Job Snijders
    NTT Communications
    Theodorus Majofskistraat 100
@@ -196,15 +233,6 @@ Authors' Addresses
    NL
 
    Email: job@ntt.net
-
-
-   Ondrej Filip
-   CZ.NIC
-   Milesovska 5
-   Prague  13000
-   CZ
-
-   Email: ondrej.filip@nic.cz
 
 
    Greg Hankins
@@ -217,4 +245,36 @@ Authors' Addresses
 
 
 
-Mauch, et al.           Expires February 18, 2017               [Page 4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mauch, et al.              Expires May 3, 2017                  [Page 5]
