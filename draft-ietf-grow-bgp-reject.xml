@@ -62,7 +62,7 @@
             <t>
                 This document defines the default behavior of a BGP speaker
                 when there is no import or export policy associated with
-                a BGP session for the IPv4 or IPv6 unicast address family.
+                a BGP session for the IPv4 or IPv6 Unicast address family.
             </t>
         </abstract>
 
