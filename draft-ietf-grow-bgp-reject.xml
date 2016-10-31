@@ -61,8 +61,8 @@
         <abstract>
             <t>
                 This document defines the default behavior of a BGP speaker
-                when there is no import or export policy is associated
-                with a BGP session for the IPv4 or IPv6 Unicast address family.
+                when there is no import or export policy associated with
+                a BGP session for the IPv4 or IPv6 unicast address family.
             </t>
         </abstract>
 
@@ -117,15 +117,14 @@
                 Address Family apply to the solution described in this
                 document:
                 <list style="symbols">
-                    <t>Software MUST consider any routes from an EBGP peer as invalid, if no import policy was configured.</t>
+                    <t>Software MUST consider any routes from an EBGP peer invalid, if no import policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
-                    <t>Software MAY provide a configuration option to disable this security capability.</t>
                     <t>Software MUST operate in this mode by default.</t>
+                    <t>Software MAY provide a configuration option to disable this security capability.</t>
                 </list>
             </t>
         </section>
-
 
         <section anchor="Acknowledgments" title="Acknowledgments">
             <t>
