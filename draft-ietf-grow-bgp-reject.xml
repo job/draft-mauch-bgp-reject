@@ -118,7 +118,7 @@
                 Address Family apply to the solution described in this
                 document:
                 <list style="symbols">
-                    <t>Software MUST discard any routes from an EBGP peer, if no import policy was configured.</t>
+                    <t>Software MUST consider any routes from an EBGP peer invalid, if no import policy was configured.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MUST operate in this mode by default.</t>
