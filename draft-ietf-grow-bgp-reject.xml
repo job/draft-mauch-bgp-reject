@@ -118,7 +118,7 @@
                 The following requirements apply to the solution described in
                 this document:
                 <list style="symbols">
-                    <t>Software MUST consider any routes ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the EEBGP peer.</t>
+                    <t>Software MUST consider any routes ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the EBGP peer.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MUST operate in this mode by default.</t>
@@ -138,12 +138,13 @@
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                This document addresses a basic routing security flaw caused by
-                permissive default configuration of route propagation policies.
-                Operators need implementers to address this problem with more
-                secure defaults to mitigate collateral damaage on Internet
-                routing. Inadvertent or adversary advertisements cause business
-                impact that can be mitigated by a secure default behavior.
+                This document addresses a basic routing security flaw
+                caused by permissive default routing policy configurations.
+                Operators need implementers to address this problem with
+                more secure defaults to mitigate collateral damage on
+                Internet routing. Inadvertent or adversarial advertisements
+                cause business impact that can be mitigated by a secure
+                default behavior.
             </t>
         </section>
 
