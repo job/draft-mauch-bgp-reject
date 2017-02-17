@@ -6,11 +6,11 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-02" submissionType="IETF">
+<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-03" submissionType="IETF">
 
     <front>
 
-        <title abbrev="BGP Default Reject">Default IPv4 and IPv6 Unicast EBGP Route Propagation Behavior Without Policies</title>
+        <title abbrev="BGP Default Reject">Default EBGP Route Propagation Behavior Without Policies</title>
 
         <author fullname="Jared Mauch" initials="J." surname="Mauch">
             <organization abbrev="NTT">NTT Communications</organization>
@@ -58,12 +58,13 @@
         <workgroup>Global Routing Operations</workgroup>
         <keyword>reject</keyword>
         <keyword>BGP</keyword>
+        <keyword>EBGP</keyword>
 
         <abstract>
             <t>
                 This document defines the default behavior of a BGP speaker
                 when there is no import or export policy associated with
-                a BGP session for the IPv4 or IPv6 Unicast Address Family.
+                an External BGP session.
             </t>
         </abstract>
 
@@ -92,20 +93,20 @@
             </t>
 
             <t>
-                Many BGP speakers send and accept all routes from a peer by
-                default. This practice dates back to the early days of the
-                Internet, where operators were permissive in offering routing
-                information to allow all networks to reach each other. As
-                the Internet has become more densely interconnected, the
-                risk of a misbehaving BGP speaker poses significant risks
-                to Internet routing.
+                Many deployed BGP speakers send and accept any and all route
+                announcements from their BGP neighbors by default. This
+                practice dates back to the early days of the Internet, where
+                operators were permissive in offering routing information to
+                allow all networks to reach each other.  As the Internet has
+                become more densely interconnected, the risk of a misbehaving
+                BGP speaker poses significant risks to Internet routing.
             </t>
 
             <t>
                 This specification intends to improve this situation
                 by requiring the explicit configuration of a BGP import
-                and export policy for any EBGP speaking session such as
-                customers, peers, or confederation boundaries in a base
+                and export policy for any External BGP (EBGP) speaking session
+                such as customers, peers, or confederation boundaries in a base
                 router or VPN instances.  When this solution is implemented,
                 BGP speakers do not accept or send routes without policies
                 configured on EBGP sessions.
@@ -114,11 +115,10 @@
 
         <section anchor="Requirements" title="Solution Requirements">
             <t>
-                The following requirements for the IPv4 and IPv6 Unicast
-                Address Family apply to the solution described in this
-                document:
+                The following requirements apply to the solution described in
+                this document:
                 <list style="symbols">
-                    <t>Software MUST consider any routes ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the EBGP peer.</t>
+                    <t>Software MUST consider any routes ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the EEBGP peer.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
                     <t>Software MUST operate in this mode by default.</t>
@@ -132,18 +132,17 @@
                 The authors would like to thank the following people for their
                 comments, support and review: Shane Amante, Christopher Morrow,
                 Robert Raszuk, Greg Skinner, Adam Chappell, Sriram
-                Kotikalapudi, and Brian Dickson.
+                Kotikalapudi, Brian Dickson, and Jeffrey Haas.
             </t>
         </section>
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                This document addresses the basic security behavior of how
-                a BGP speaker propagates routes in a default configuration
-                without policies. Operators have a need for implementers to
-                address the problem through a behavior change to mitigate
-                against possible attacks from a permissive security behavior.
-                Attacks and inadvertent advertisements cause business
+                This document addresses a basic routing security flaw caused by
+                permissive default configuration of route propagation policies.
+                Operators need implementers to address this problem with more
+                secure defaults to mitigate collateral damaage on Internet
+                routing. Inadvertent or adversary advertisements cause business
                 impact that can be mitigated by a secure default behavior.
             </t>
         </section>
