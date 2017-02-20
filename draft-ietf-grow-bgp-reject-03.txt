@@ -5,9 +5,9 @@
 Global Routing Operations                                       J. Mauch
 Internet-Draft                                               J. Snijders
 Intended status: Standards Track                                     NTT
-Expires: August 21, 2017                                      G. Hankins
+Expires: August 24, 2017                                      G. Hankins
                                                                    Nokia
-                                                       February 17, 2017
+                                                       February 20, 2017
 
 
         Default EBGP Route Propagation Behavior Without Policies
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 21, 2017.
+   This Internet-Draft will expire on August 24, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Mauch, et al.            Expires August 21, 2017                [Page 1]
+Mauch, et al.            Expires August 24, 2017                [Page 1]
 
 Internet-Draft             BGP Default Reject              February 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Mauch, et al.            Expires August 21, 2017                [Page 2]
+Mauch, et al.            Expires August 24, 2017                [Page 2]
 
 Internet-Draft             BGP Default Reject              February 2017
 
@@ -121,13 +121,14 @@ Internet-Draft             BGP Default Reject              February 2017
 
    o  Software MUST consider any routes ineligible for route selection
       (section 9.1.1 [RFC4271]), if no import policy was configured for
-      the EEBGP peer.
+      the EBGP peer.
 
    o  Software MUST NOT advertise any routes to an EBGP peer, if no
       export policy was configured.
 
-   o  Software SHOULD provide protection from internal failures
-      preventing the advertisement and acceptance of routes.
+   o  Software SHOULD fall back to a "import nothing" & "export nothing"
+      mode following failure of internal components, such as of a policy
+      engine.
 
    o  Software MUST operate in this mode by default.
 
@@ -144,11 +145,11 @@ Internet-Draft             BGP Default Reject              February 2017
 4.  Security Considerations
 
    This document addresses a basic routing security flaw caused by
-   permissive default configuration of route propagation policies.
-   Operators need implementers to address this problem with more secure
-   defaults to mitigate collateral damaage on Internet routing.
-   Inadvertent or adversary advertisements cause business impact that
-   can be mitigated by a secure default behavior.
+   permissive default routing policy configurations.  Operators need
+   implementers to address this problem with more secure defaults to
+   mitigate collateral damage on Internet routing.  Inadvertent or
+   adversarial advertisements cause business impact that can be
+   mitigated by a secure default behavior.
 
 5.  IANA Considerations
 
@@ -164,8 +165,7 @@ Internet-Draft             BGP Default Reject              February 2017
 
 
 
-
-Mauch, et al.            Expires August 21, 2017                [Page 3]
+Mauch, et al.            Expires August 24, 2017                [Page 3]
 
 Internet-Draft             BGP Default Reject              February 2017
 
@@ -221,7 +221,7 @@ Authors' Addresses
 
 
 
-Mauch, et al.            Expires August 21, 2017                [Page 4]
+Mauch, et al.            Expires August 24, 2017                [Page 4]
 
 Internet-Draft             BGP Default Reject              February 2017
 
@@ -277,4 +277,4 @@ Internet-Draft             BGP Default Reject              February 2017
 
 
 
-Mauch, et al.            Expires August 21, 2017                [Page 5]
+Mauch, et al.            Expires August 24, 2017                [Page 5]
