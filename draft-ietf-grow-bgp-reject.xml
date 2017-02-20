@@ -120,7 +120,7 @@
                 <list style="symbols">
                     <t>Software MUST consider any routes ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the EBGP peer.</t>
                     <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
-                    <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
+                    <t>Software SHOULD fall back to a "import nothing" &amp; "export nothing" mode following failure of internal components, such as of a policy engine.</t>
                     <t>Software MUST operate in this mode by default.</t>
                     <t>Software MAY provide a configuration option to disable this security capability.</t>
                 </list>
