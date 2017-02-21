@@ -89,16 +89,16 @@ Table of Contents
    we aim to address.
 
    Many deployed BGP speakers send and accept any and all route
-   announcements from their BGP neighbors by default.  This practice
+   announcements between their BGP neighbors by default.  This practice
    dates back to the early days of the Internet, where operators were
-   permissive in offering routing information to allow all networks to
+   permissive in sending routing information to allow all networks to
    reach each other.  As the Internet has become more densely
    interconnected, the risk of a misbehaving BGP speaker poses
    significant risks to Internet routing.
 
    This specification intends to improve this situation by requiring the
    explicit configuration of a BGP import and export policy for any
-   External BGP (EBGP) speaking session such as customers, peers, or
+   External BGP (EBGP) session such as customers, peers, or
    confederation boundaries in a base router or VPN instances.  When
    this solution is implemented, BGP speakers do not accept or send
    routes without policies configured on EBGP sessions.
@@ -126,9 +126,9 @@ Internet-Draft             BGP Default Reject              February 2017
    o  Software MUST NOT advertise any routes to an EBGP peer, if no
       export policy was configured.
 
-   o  Software SHOULD fall back to a "import nothing" & "export nothing"
-      mode following failure of internal components, such as of a policy
-      engine.
+   o  Software SHOULD fall back to an "import nothing" and "export
+      nothing" mode following failure of internal components, such as a
+      policy engine.
 
    o  Software MUST operate in this mode by default.
 
