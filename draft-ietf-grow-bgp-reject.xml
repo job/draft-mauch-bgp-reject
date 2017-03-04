@@ -6,14 +6,14 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-03" submissionType="IETF">
+<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-04" submissionType="IETF">
 
     <front>
 
         <title abbrev="BGP Default Reject">Default EBGP Route Propagation Behavior Without Policies</title>
 
         <author fullname="Jared Mauch" initials="J." surname="Mauch">
-            <organization abbrev="NTT">NTT Communications</organization>
+            <organization abbrev="Akamai">Akamai Technologies</organization>
             <address>
                 <postal>
                     <street>8285 Reese Lane</street>
@@ -21,7 +21,7 @@
                     <city>Ann Arbor</city>
                     <country>US</country>
                 </postal>
-                <email>jmauch@us.ntt.net</email>
+                <email>jared@akamai.com</email>
             </address>
         </author>
 
