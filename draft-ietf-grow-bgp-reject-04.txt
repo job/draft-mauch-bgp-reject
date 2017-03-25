@@ -5,10 +5,10 @@
 Global Routing Operations                                       J. Mauch
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                             J. Snijders
-Expires: September 5, 2017                                           NTT
+Expires: September 26, 2017                                          NTT
                                                               G. Hankins
                                                                    Nokia
-                                                           March 4, 2017
+                                                          March 25, 2017
 
 
         Default EBGP Route Propagation Behavior Without Policies
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 5, 2017.
+   This Internet-Draft will expire on September 26, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Mauch, et al.           Expires September 5, 2017               [Page 1]
+Mauch, et al.          Expires September 26, 2017               [Page 1]
 
 Internet-Draft             BGP Default Reject                 March 2017
 
@@ -100,16 +100,16 @@ Table of Contents
    This specification intends to improve this situation by requiring the
    explicit configuration of a BGP import and export policy for any
    External BGP (EBGP) session such as customers, peers, or
-   confederation boundaries in a base router or VPN instances.  When
-   this solution is implemented, BGP speakers do not accept or send
-   routes without policies configured on EBGP sessions.
+   confederation boundaries for all enabled address families.  When this
+   solution is implemented, BGP speakers do not accept or send routes
+   without policies configured on EBGP sessions.
 
 
 
 
 
 
-Mauch, et al.           Expires September 5, 2017               [Page 2]
+Mauch, et al.          Expires September 26, 2017               [Page 2]
 
 Internet-Draft             BGP Default Reject                 March 2017
 
@@ -140,7 +140,7 @@ Internet-Draft             BGP Default Reject                 March 2017
    The authors would like to thank the following people for their
    comments, support and review: Shane Amante, Christopher Morrow,
    Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi,
-   Brian Dickson, Jeffrey Haas, and John Heasley.
+   Brian Dickson, Jeffrey Haas, John Heasley, and Ignas Bagdonas.
 
 4.  Security Considerations
 
@@ -165,7 +165,7 @@ Internet-Draft             BGP Default Reject                 March 2017
 
 
 
-Mauch, et al.           Expires September 5, 2017               [Page 3]
+Mauch, et al.          Expires September 26, 2017               [Page 3]
 
 Internet-Draft             BGP Default Reject                 March 2017
 
@@ -221,7 +221,7 @@ Authors' Addresses
 
 
 
-Mauch, et al.           Expires September 5, 2017               [Page 4]
+Mauch, et al.          Expires September 26, 2017               [Page 4]
 
 Internet-Draft             BGP Default Reject                 March 2017
 
@@ -277,4 +277,4 @@ Internet-Draft             BGP Default Reject                 March 2017
 
 
 
-Mauch, et al.           Expires September 5, 2017               [Page 5]
+Mauch, et al.          Expires September 26, 2017               [Page 5]
