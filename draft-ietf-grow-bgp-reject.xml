@@ -88,13 +88,9 @@
             </t>
 
             <t>
-                Many deployed BGP speakers send and accept any and all route
-                announcements between their BGP neighbors by default. This
-                practice dates back to the early days of the Internet, where
-                operators were permissive in sending routing information to
-                allow all networks to reach each other.  As the Internet has
-                become more densely interconnected, the risk of a misbehaving
-                BGP speaker poses significant risks to Internet routing.
+                Many deployed BGP speakers send and accept any and all route announcements between their BGP neighbors by default.
+                This practice dates back to the early days of the Internet, where operators were permissive in sending routing information to allow all networks to reach each other.
+                As the Internet has become more densely interconnected, the risk of a misbehaving BGP speaker poses significant risks to Internet routing.
             </t>
 
             <t>
