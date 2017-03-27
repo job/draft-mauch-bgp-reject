@@ -82,8 +82,8 @@
     <middle>
         <section anchor="Introduction" title="Introduction">
             <t>
-                There are BGP routing security issues that can be addressed
-                to make the Internet more stable. Route leaks <xref
+                There are BGP routing security issues that need to be
+                addressed to make the Internet more stable. Route leaks <xref
                 target="RFC7908" /> are part of the problem, but software
                 defects and operator misconfigurations contribute too. BGP
                 <xref target="RFC4271" /> speakers have default settings
