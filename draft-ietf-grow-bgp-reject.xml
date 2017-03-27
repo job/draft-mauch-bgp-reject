@@ -82,9 +82,13 @@
     <middle>
         <section anchor="Introduction" title="Introduction">
             <t>
-                BGP <xref target="RFC4271" /> speakers speakers may have some default settings which need to be addressed as part of improving the default level of security for BGP routing.
-                There is a need to provide guidance to BGP implementers with regards to the default behaviors of a well functioning Internet.
-                Route leaks <xref target="RFC7908" /> are part of the problem, additionally software defects and operator misconfigurations are a few of the issues needing to be addresses on Internet stability.
+                There are BGP routing security issues that can be addressed
+                to make the Internet more stable. Route leaks <xref
+                target="RFC7908" /> are part of the problem, but software
+                defects and operator misconfigurations contribute too. BGP
+                <xref target="RFC4271" /> speakers have default settings
+                that need to be changed, and BGP implementers need guidance
+                to improve the default level of Internet routing security.
             </t>
 
             <t>
@@ -121,7 +125,7 @@
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                This document addresses a basic routing security flaw
+                This document addresses a basic routing security issue
                 caused by permissive default routing policy configurations.
                 Operators need implementers to address this problem with
                 more secure defaults to mitigate collateral damage on
