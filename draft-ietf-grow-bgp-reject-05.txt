@@ -5,10 +5,10 @@
 Global Routing Operations                                       J. Mauch
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                             J. Snijders
-Expires: October 13, 2017                                            NTT
+Expires: October 14, 2017                                            NTT
                                                               G. Hankins
                                                                    Nokia
-                                                          April 11, 2017
+                                                          April 12, 2017
 
 
         Default EBGP Route Propagation Behavior Without Policies
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 13, 2017.
+   This Internet-Draft will expire on October 14, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Mauch, et al.           Expires October 13, 2017                [Page 1]
+Mauch, et al.           Expires October 14, 2017                [Page 1]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Mauch, et al.           Expires October 13, 2017                [Page 2]
+Mauch, et al.           Expires October 14, 2017                [Page 2]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
@@ -119,11 +119,11 @@ Internet-Draft             BGP Default Reject                 April 2017
    The following requirements apply to all BGP speakers:
 
    o  A BGP speaker MUST consider any routes advertised by an EBGP peer
-      (section 9.1.1 [RFC4271]), if no import policy was configured for
-      the peer.
+      ineligible for route selection (section 9.1.1 [RFC4271]), if no
+      import policy was configured for the peer.
 
    o  A BGP speaker MUST NOT advertise any routes to an EBGP peer, if no
-      export policy was configured.
+      export policy was configured for the peer.
 
    o  A BGP speaker SHOULD fall back to an "import nothing" and "export
       nothing" mode following failure of internal components, such as a
@@ -165,7 +165,7 @@ Internet-Draft             BGP Default Reject                 April 2017
 
 
 
-Mauch, et al.           Expires October 13, 2017                [Page 3]
+Mauch, et al.           Expires October 14, 2017                [Page 3]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
@@ -221,7 +221,7 @@ Authors' Addresses
 
 
 
-Mauch, et al.           Expires October 13, 2017                [Page 4]
+Mauch, et al.           Expires October 14, 2017                [Page 4]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
@@ -277,4 +277,4 @@ Internet-Draft             BGP Default Reject                 April 2017
 
 
 
-Mauch, et al.           Expires October 13, 2017                [Page 5]
+Mauch, et al.           Expires October 14, 2017                [Page 5]
