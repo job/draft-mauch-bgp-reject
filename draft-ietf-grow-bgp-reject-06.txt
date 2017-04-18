@@ -180,11 +180,11 @@ Internet-Draft             BGP Default Reject                 April 2017
    potential of exposing software defects or misconfigurations that
    could have unforeseen technical and business impacting effects.
 
-   update to RFC4271 specified in this document is aimed at eliminating
-   those inadvertent effects.  Operators must explicitly configure
-   Import and Export Policies to achieve their expected goals.  There is
-   of course no protection against a malicious or incorrect explicit
-   configuration.
+   The update to [RFC4271] specified in this document is aimed at
+   eliminating those inadvertent effects.  Operators must explicitly
+   configure Import and Export Policies to achieve their expected goals.
+   There is of course no protection against a malicious or incorrect
+   explicit configuration.
 
    The security considerations described in [RFC4271] and the
    vulnerability analysis discussed in [RFC4272] also apply to this

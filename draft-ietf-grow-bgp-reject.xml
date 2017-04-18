@@ -157,7 +157,7 @@
                 These policies also have the potential of exposing software defects or misconfigurations that could have unforeseen technical and business impacting effects.
             </t>
             <t>
-                update to RFC4271 specified in this document is aimed at eliminating those inadvertent effects.
+                The update to <xref target="RFC4271" /> specified in this document is aimed at eliminating those inadvertent effects.
                 Operators must explicitly configure Import and Export Policies to achieve their expected goals.
                 There is of course no protection against a malicious or incorrect explicit configuration.
             </t>
