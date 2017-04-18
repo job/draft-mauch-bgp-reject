@@ -161,7 +161,7 @@ Internet-Draft             BGP Default Reject                 April 2017
    comments, support and review: Shane Amante, Christopher Morrow,
    Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi,
    Brian Dickson, Jeffrey Haas, John Heasley, Ignas Bagdonas, Donald
-   Smith, and Dale Worley.
+   Smith, Dale Worley, and Alvaro Retana.
 
 
 
