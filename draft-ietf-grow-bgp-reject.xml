@@ -6,7 +6,12 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="std" ipr="trust200902" docName="draft-ietf-grow-bgp-reject-05" submissionType="IETF">
+<rfc
+    category="std"
+    ipr="trust200902"
+    docName="draft-ietf-grow-bgp-reject-06"
+    updates="4271"
+    submissionType="IETF">
 
     <front>
 
@@ -62,7 +67,7 @@
 
         <abstract>
             <t>
-                This document defines the default behavior of a BGP speaker when there is no import or export policy associated with an External BGP session.
+                This document updates RFC4271 by defining the default behavior of a BGP speaker when there is no import or export policy associated with an External BGP session.
             </t>
         </abstract>
 
@@ -79,7 +84,7 @@
             <t>
                 There are BGP routing security issues that need to be addressed to make the Internet more stable. 
                 Route leaks <xref target="RFC7908" /> are part of the problem, but software defects or operator misconfigurations can contribute too. 
-                This document provides guidance to BGP <xref target="RFC4271" /> implementers to improve the default level of Internet routing security.
+                This document updates <xref target="RFC4271" /> in order to improve the default level of Internet routing security.
             </t>
 
             <t>
@@ -90,19 +95,52 @@
 
             <t>
                 This specification intends to improve this situation by requiring the explicit configuration of a BGP import and export policy for any External BGP (EBGP) session such as customers, peers, or confederation boundaries for all enabled address families.
-                When this solution is implemented, BGP speakers do not accept or send routes without policies configured on EBGP sessions.
+                When this solution is implemented, BGP speakers do not use or send routes without policies configured on EBGP sessions.
             </t>
         </section>
 
-        <section anchor="Solution" title="Solution">
+        <section anchor="Terminology" title="Terminology">
             <t>
-                The following requirements apply to all BGP speakers:
-                <list style="symbols">
-                    <t>A BGP speaker MUST consider any routes advertised by an EBGP peer ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the peer.</t>
-                    <t>A BGP speaker MUST NOT advertise any routes to an EBGP peer, if no export policy was configured for the peer.</t>
-                    <t>A BGP speaker SHOULD fall back to an "import nothing" and "export nothing" mode following failure of internal components, such as a policy engine.</t>
-                    <t>A BGP speaker MAY provide a configuration option to disable the preceding behaviors, but it MUST implement them by default.</t>
+                <xref target="RFC4271" /> describes a Policy Information Base (PIB) which contains local policies that can be applied to the information in the Routing Information Base (RIB).
+                This document distinguishes the type of policy based on its application.
+            </t>
+            <t>
+                Import Policy: Local policy to be applied to the information contained in the Adj-RIBs-In.
+                As described in <xref target="RFC4271">Section 3.2</xref>, the Adj-RIBs-In contain information learned from other BGP speakers, and the application of the Import Policy results in the routes that will be used by the local BGP speaker.
+            </t>
+            <t>
+                Export Policy: Local policy to be applied in selecting the information contained in the Adj-RIBs-Out.
+                As described in <xref target="RFC4271">Section 3.2</xref>, the Adj-RIBs-Out contain information that has been selected to advertisement to other BGP speakers.
+            </t>
+        </section>
+
+        <section title="Changes to RFC4271">
+            <t>
+                This section describes the Updates to <xref target="RFC4271" /> that define the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session.
+            </t>
+            <t>
+                The following paragraph is added to Section 9.1 (Decision Process) after the fifth paragraph:
+            </t>
+            <t>
+                <list style="empty">
+                    <t> 
+                       Routes contained in an Adj-RIB-In associated with an EBGP peer SHALL NOT be considered in the Decision Process if no explicit Import Policy has been defined.
+                   </t>
+               </list>
+           </t>
+			<t>
+                The following paragraph is added to Section 9.1.3 (Phase 3: Route Dissemination) after the third paragraph:
+            </t>
+            <t>
+                <list style="empty">
+                    <t>
+                        Routes SHALL NOT be added to an Adj-RIB-Out associated with an EBGP peer if no explicit Export Policy has been defined.
+                    </t>
                 </list>
+            </t>
+            <t>
+                A failure of the PIB SHOULD be considered as if no Import or Export Policy is associated with the affected EBGP sessions.
+                The behavior described above MAY be disabled by explicit configuration.
             </t>
         </section>
 
@@ -114,9 +152,17 @@
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                This document addresses a basic routing security issue caused by permissive default routing policy configurations.
-                Operators need implementers to address this problem with more secure defaults to mitigate collateral damage on Internet routing. 
-                Inadvertent or adversarial advertisements cause business impact that can be mitigated by a secure default behavior.
+                Permissive default routing policies can result in inadvertent effects such as route leaks <xref target="RFC7908" />, in general resulting in rerouting of traffic through an unexpected path.
+                While it is possible for an operator to use monitoring to detect unexpected flows, there is no general framework that can be applied.
+                These policies also have the potential of exposing software defects or misconfigurations that could have unforeseen technical and business impacting effects.
+            </t>
+            <t>
+                update to RFC4271 specified in this document is aimed at eliminating those inadvertent effects.
+                Operators must explicitly configure Import and Export Policies to achieve their expected goals.
+                There is of course no protection against a malicious or incorrect explicit configuration.
+            </t>
+            <t>
+                The security considerations described in <xref target="RFC4271" /> and the vulnerability analysis discussed in <xref target="RFC4272" /> also apply to this document.
             </t>
         </section>
 
@@ -162,6 +208,7 @@ Email: ondrej.filip@nic.cz
         </references>
 
         <references title="Informative References">
+            <?rfc include="reference.RFC.4272.xml"?>
             <?rfc include="reference.RFC.7908.xml"?>
         </references>
 
