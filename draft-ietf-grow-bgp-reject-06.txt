@@ -151,17 +151,17 @@ Internet-Draft             BGP Default Reject                 April 2017
    Policies associated with a particular EBGP session.
 
    The following paragraph is added to Section 9.1 (Decision Process)
-   after the fifth paragraph:
+   after the fifth paragraph ending in "route aggregation and route
+   information reduction":
 
       Routes contained in an Adj-RIB-In associated with an EBGP peer
-      SHALL NOT be considered in the Decision Process if no explicit
-      Import Policy has been defined.
+      SHALL NOT be considered eligible in the Decision Process if no
+      explicit Import Policy has been defined.
 
    The following paragraph is added to Section 9.1.3 (Phase 3: Route
-   Dissemination) after the third paragraph:
+   Dissemination) after the third paragraph ending in "by means of an
+   UPDATE message (see 9.2).":
 
-      Routes SHALL NOT be added to an Adj-RIB-Out associated with an
-      EBGP peer if no explicit Export Policy has been defined.
 
 
 
@@ -169,6 +169,9 @@ Mauch, et al.           Expires October 31, 2017                [Page 3]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
+
+      Routes SHALL NOT be added to an Adj-RIB-Out associated with an
+      EBGP peer if no explicit Export Policy has been defined.
 
 5.  Acknowledgments
 
@@ -212,10 +215,7 @@ Internet-Draft             BGP Default Reject                 April 2017
 
    Email: jheitz@cisco.com
 
-   Ondrej Filip
-   CZ.NIC
 
-   Email: ondrej.filip@nic.cz
 
 
 
@@ -225,6 +225,11 @@ Mauch, et al.           Expires October 31, 2017                [Page 4]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
+
+   Ondrej Filip
+   CZ.NIC
+
+   Email: ondrej.filip@nic.cz
 
 9.  References
 
@@ -269,11 +274,6 @@ A.1.  N+1 N+2 Release Strategy
    N+2 release strategy".  In release N+1 the implementor generates a
    previously not-exposed configuration setting indicating that the
    device is operating in "ebgp insecure-mode".  Through release N+1
-   users of the BGP implementation become aware that a modifable default
-   exists in the implementation and can prepare accordingly.  In release
-   N+2 (or further), the inverse of the previous default configuration
-   parameter (introduced in release N+1) becomes the new default.
-
 
 
 
@@ -281,6 +281,11 @@ Mauch, et al.           Expires October 31, 2017                [Page 5]
 
 Internet-Draft             BGP Default Reject                 April 2017
 
+
+   users of the BGP implementation become aware that a modifable default
+   exists in the implementation and can prepare accordingly.  In release
+   N+2 (or further), the inverse of the previous default configuration
+   parameter (introduced in release N+1) becomes the new default.
 
    As a result, any new installation of Release N+2 will adhere to this
    document, whereas installations upgraded from version Release N+1
@@ -314,11 +319,6 @@ Authors' Addresses
    USA
 
    Email: greg.hankins@nokia.com
-
-
-
-
-
 
 
 
