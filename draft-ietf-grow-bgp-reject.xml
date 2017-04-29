@@ -114,6 +114,22 @@
             </t>
         </section>
 
+        <section title="Solution Specification">
+            <t>
+                <list style="symbols">
+                    <t>
+                        A BGP speaker MUST consider any routes advertised by an EBGP peer ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no import policy was configured for the peer.
+                    </t>
+                    <t>
+                        A BGP speaker MUST NOT advertise any routes to an EBGP peer, if no export policy was configured for the peer.
+                    </t>
+                    <t>
+                        A BGP speaker MAY provide a configuration option to disable the preceding behaviors.
+                    </t>
+                </list>
+            </t>
+        </section>
+
         <section title="Changes to RFC4271">
             <t>
                 This section describes the Updates to <xref target="RFC4271" /> that define the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session.
@@ -137,10 +153,6 @@
                         Routes SHALL NOT be added to an Adj-RIB-Out associated with an EBGP peer if no explicit Export Policy has been defined.
                     </t>
                 </list>
-            </t>
-            <t>
-                A failure of the PIB SHOULD be considered as if no Import or Export Policy is associated with the affected EBGP sessions.
-                The behavior described above MAY be disabled by explicit configuration.
             </t>
         </section>
 
@@ -212,6 +224,28 @@ Email: ondrej.filip@nic.cz
             <?rfc include="reference.RFC.7908.xml"?>
         </references>
 
+    <section title="Transition Considerations">
+        <t>
+            This appendix is non-normative.
+        </t>
+        <t>
+            It is anticipated that transitioning from an acquiescent BGP implementation to a compliant BGP implementation will require a process which spans several years.
+        </t>
+        <t>
+            It is understood and acknowledged that operators who are taking advantage of an undefined behavior will always be surprised by changes to said behaviour.
+        </t>
+        <section title="N+1 N+2 Release Strategy">
+            <t>
+                An implementor could leverage an approach described as "the N+1 and N+2 release strategy".
+                In release N+1 the implementor generates a previously not-exposed configuration setting indicating that the device is operating in "ebgp insecure-mode".
+                Through release N+1 users of the BGP implementation become aware that a modifable default exists in the implementation and can prepare accordingly.
+                In release N+2 (or further), the inverse of the previous default configuration parameter (introduced in release N+1) becomes the new default.
+            </t>
+            <t>
+                As a result, any new installation of Release N+2 will adhere to this document, whereas installations upgraded from version Release N+1 adhere to the previous insecure behaviour if no modification was made to the "ebgp insecure-mode" configuration parameter.
+            </t>
+        </section>
+    </section>
     </back>
 
 </rfc>
