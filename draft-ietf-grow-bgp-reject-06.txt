@@ -130,7 +130,7 @@ Internet-Draft             BGP Default Reject                   May 2017
    Export Policy: a local policy to be applied in selecting the
    information contained in the Adj-RIBs-Out.  As described in
    Section 3.2 [RFC4271], the Adj-RIBs-Out contain information that has
-   been selected to advertisement to other BGP speakers.
+   been selected for advertisement to other BGP speakers.
 
 3.  Solution Specification
 
