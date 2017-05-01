@@ -6,9 +6,9 @@ Global Routing Operations                                       J. Mauch
 Internet-Draft                                                    Akamai
 Updates: 4271 (if approved)                                  J. Snijders
 Intended status: Standards Track                                     NTT
-Expires: October 31, 2017                                     G. Hankins
+Expires: November 2, 2017                                     G. Hankins
                                                                    Nokia
-                                                          April 29, 2017
+                                                             May 1, 2017
 
 
         Default EBGP Route Propagation Behavior Without Policies
@@ -17,7 +17,7 @@ Expires: October 31, 2017                                     G. Hankins
 Abstract
 
    This document updates RFC4271 by defining the default behavior of a
-   BGP speaker when there is no import or export policy associated with
+   BGP speaker when there is no Import or Export Policy associated with
    an External BGP session.
 
 Requirements Language
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 31, 2017.
+   This Internet-Draft will expire on November 2, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Mauch, et al.           Expires October 31, 2017                [Page 1]
+Mauch, et al.           Expires November 2, 2017                [Page 1]
 
-Internet-Draft             BGP Default Reject                 April 2017
+Internet-Draft             BGP Default Reject                   May 2017
 
 
    (http://trustee.ietf.org/license-info) in effect on the date of
@@ -85,11 +85,11 @@ Table of Contents
 
 1.  Introduction
 
-   There are BGP routing security issues that need to be addressed to
-   make the Internet more stable.  Route leaks [RFC7908] are part of the
-   problem, but software defects or operator misconfigurations can
-   contribute too.  This document updates [RFC4271] in order to improve
-   the default level of Internet routing security.
+   BGP routing security issues need to be addressed in order to make the
+   Internet more stable.  Route leaks [RFC7908] are part of the problem,
+   but software defects or operator misconfiguration can contribute too.
+   This document updates [RFC4271] in order to improve the default level
+   of Internet routing security.
 
    Many deployed BGP speakers send and accept any and all route
    announcements between their BGP neighbors by default.  This practice
@@ -100,7 +100,7 @@ Table of Contents
    significant risks to Internet routing.
 
    This specification intends to improve this situation by requiring the
-   explicit configuration of a BGP import and export policy for any
+   explicit configuration of a BGP Import and Export Policy for any
    External BGP (EBGP) session such as customers, peers, or
    confederation boundaries for all enabled address families.  When this
    solution is implemented, BGP speakers do not use or send routes
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Mauch, et al.           Expires October 31, 2017                [Page 2]
+Mauch, et al.           Expires November 2, 2017                [Page 2]
 
-Internet-Draft             BGP Default Reject                 April 2017
+Internet-Draft             BGP Default Reject                   May 2017
 
 
 2.  Terminology
@@ -121,13 +121,13 @@ Internet-Draft             BGP Default Reject                 April 2017
    Information Base (RIB).  This document distinguishes the type of
    policy based on its application.
 
-   Import Policy: Local policy to be applied to the information
+   Import Policy: a local policy to be applied to the information
    contained in the Adj-RIBs-In.  As described in Section 3.2 [RFC4271],
    the Adj-RIBs-In contain information learned from other BGP speakers,
    and the application of the Import Policy results in the routes that
    will be used by the local BGP speaker.
 
-   Export Policy: Local policy to be applied in selecting the
+   Export Policy: a local policy to be applied in selecting the
    information contained in the Adj-RIBs-Out.  As described in
    Section 3.2 [RFC4271], the Adj-RIBs-Out contain information that has
    been selected to advertisement to other BGP speakers.
@@ -136,10 +136,10 @@ Internet-Draft             BGP Default Reject                 April 2017
 
    o  A BGP speaker MUST consider any routes advertised by an EBGP peer
       ineligible for route selection (section 9.1.1 [RFC4271]), if no
-      import policy was configured for the peer.
+      Import Policy was configured for the peer.
 
    o  A BGP speaker MUST NOT advertise any routes to an EBGP peer, if no
-      export policy was configured for the peer.
+      Export Policy was configured for the peer.
 
    o  A BGP speaker MAY provide a configuration option to disable the
       preceding behaviors.
@@ -156,7 +156,7 @@ Internet-Draft             BGP Default Reject                 April 2017
 
       Routes contained in an Adj-RIB-In associated with an EBGP peer
       SHALL NOT be considered eligible in the Decision Process if no
-      explicit Import Policy has been defined.
+      explicit Import Policy has been applied.
 
    The following paragraph is added to Section 9.1.3 (Phase 3: Route
    Dissemination) after the third paragraph ending in "by means of an
@@ -165,13 +165,13 @@ Internet-Draft             BGP Default Reject                 April 2017
 
 
 
-Mauch, et al.           Expires October 31, 2017                [Page 3]
+Mauch, et al.           Expires November 2, 2017                [Page 3]
 
-Internet-Draft             BGP Default Reject                 April 2017
+Internet-Draft             BGP Default Reject                   May 2017
 
 
       Routes SHALL NOT be added to an Adj-RIB-Out associated with an
-      EBGP peer if no explicit Export Policy has been defined.
+      EBGP peer if no explicit Export Policy has been applied.
 
 5.  Acknowledgments
 
@@ -188,11 +188,11 @@ Internet-Draft             BGP Default Reject                 April 2017
    traffic through an unexpected path.  While it is possible for an
    operator to use monitoring to detect unexpected flows, there is no
    general framework that can be applied.  These policies also have the
-   potential of exposing software defects or misconfigurations that
-   could have unforeseen technical and business impacting effects.
+   potential to expose software defects or misconfiguration that could
+   have unforeseen technical and business impacting effects.
 
-   The update to [RFC4271] specified in this document is aimed at
-   eliminating those inadvertent effects.  Operators must explicitly
+   The update to [RFC4271] specified in this document is intended to
+   eliminate those inadvertent effects.  Operators must explicitly
    configure Import and Export Policies to achieve their expected goals.
    There is of course no protection against a malicious or incorrect
    explicit configuration.
@@ -221,9 +221,9 @@ Internet-Draft             BGP Default Reject                 April 2017
 
 
 
-Mauch, et al.           Expires October 31, 2017                [Page 4]
+Mauch, et al.           Expires November 2, 2017                [Page 4]
 
-Internet-Draft             BGP Default Reject                 April 2017
+Internet-Draft             BGP Default Reject                   May 2017
 
 
    Ondrej Filip
@@ -262,34 +262,35 @@ Appendix A.  Transition Considerations
 
    It is anticipated that transitioning from an acquiescent BGP
    implementation to a compliant BGP implementation will require a
-   process which spans several years.
+   process thay may take several years.
 
    It is understood and acknowledged that operators who are taking
    advantage of an undefined behavior will always be surprised by
-   changes to said behaviour.
+   changes to said behavior.
 
 A.1.  N+1 N+2 Release Strategy
 
-   An implementor could leverage an approach described as "the N+1 and
-   N+2 release strategy".  In release N+1 the implementor generates a
-   previously not-exposed configuration setting indicating that the
-   device is operating in "ebgp insecure-mode".  Through release N+1
+   An implementer could leverage an approach described as "the N+1 and
+   N+2 release strategy".  In release N+1, the implementer introduces a
+   new default configuration parameter to indicate that the BGP speaker
+   is operating in "ebgp insecure-mode".  In release N+1, operators of
 
 
 
-Mauch, et al.           Expires October 31, 2017                [Page 5]
+Mauch, et al.           Expires November 2, 2017                [Page 5]
 
-Internet-Draft             BGP Default Reject                 April 2017
+Internet-Draft             BGP Default Reject                   May 2017
 
 
-   users of the BGP implementation become aware that a modifable default
-   exists in the implementation and can prepare accordingly.  In release
-   N+2 (or further), the inverse of the previous default configuration
-   parameter (introduced in release N+1) becomes the new default.
+   the BGP implementation become aware that a configurable default
+   exists in the implementation, and can prepare accordingly.  In
+   release N+2 or later, the inverse of the previous default
+   configuration parameter that was introduced in release N+1 becomes
+   the new default.
 
-   As a result, any new installation of Release N+2 will adhere to this
-   document, whereas installations upgraded from version Release N+1
-   adhere to the previous insecure behaviour if no modification was made
+   As a result, any new installation of release N+2 will adhere to this
+   document.  Installations upgraded from version release N+1 will
+   adhere to the previous insecure behavior, if no modification was made
    to the "ebgp insecure-mode" configuration parameter.
 
 Authors' Addresses
@@ -332,5 +333,4 @@ Authors' Addresses
 
 
 
-
-Mauch, et al.           Expires October 31, 2017                [Page 6]
+Mauch, et al.           Expires November 2, 2017                [Page 6]
