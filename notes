@@ -1,0 +1,2 @@
+A BGP implementer cannot know the deployment context and use case in which its implementation is used. Accordingly, no implementation can determine whether it is desirable or not to use any received EBGP routes, or advertise any routes to an External BGP neighbor. Thus logically, the only safe default for EBGP, is to consider all received routes ineligible, and not advertise any routes. The operator is required to explicitly configure the implementation by specifying a routing policy which will accommodate the intended deployment context and application.
+
