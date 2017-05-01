@@ -159,7 +159,7 @@
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   contained in the Adj-RIBs-In.  As described in Section 3.2 [RFC4271],</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   the Adj-RIBs-In contain information learned from other BGP speakers,</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   and the application of the Import Policy results in the routes that</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   will be used by the local BGP speaker.</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   will be considered in the Decision Process by the local BGP speaker.</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   Export Policy: a local policy to be applied in selecting the</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   information contained in the Adj-RIBs-Out.  As described in</span></td><td class="lineno" valign="top"></td></tr>
@@ -304,12 +304,14 @@
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   An implementer could leverage an approach described as "the N+1 and</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   N+2 release strategy".  In release N+1, the implementer introduces a</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   new default configuration parameter to indicate that the BGP speaker</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   is operating in "ebgp insecure-mode".  In release N+1, operators of</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   the BGP implementation become aware that a configurable default</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   exists in the implementation, and can prepare accordingly.  In</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   release N+2 or later, the inverse of the previous default</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   configuration parameter that was introduced in release N+1 becomes</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   the new default.</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   is operating in "ebgp insecure-mode".  In addition to the</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   introduction of the new parameter, an implementer could begin to</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   display informational warnings to the operator that certain parts of</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   the configuration are incomplete.  In release N+1, operators of the</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   BGP implementation become aware that a configurable default exists in</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   the implementation, and can prepare accordingly.  In release N+2 or</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   later, the inverse of the previous default configuration parameter</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   that was introduced in release N+1 becomes the new default.</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   As a result, any new installation of release N+2 will adhere to this</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   document.  Installations upgraded from version release N+1 will</span></td><td class="lineno" valign="top"></td></tr>
@@ -329,7 +331,7 @@
 
      <tr><td></td><td class="left"></td><td> </td><td class="right"></td><td></td></tr>
      <tr bgcolor="gray"><th colspan="5" align="center"><a name="end">&nbsp;End of changes. 24 change blocks.&nbsp;</a></th></tr>
-     <tr class="stats"><td></td><th><i>49 lines changed or deleted</i></th><th><i> </i></th><th><i>129 lines changed or added</i></th><td></td></tr>
+     <tr class="stats"><td></td><th><i>49 lines changed or deleted</i></th><th><i> </i></th><th><i>131 lines changed or added</i></th><td></td></tr>
      <tr><td colspan="5" align="center" class="small"><br/>This html diff was produced by rfcdiff 1.41. The latest version is available from <a href="http://www.tools.ietf.org/tools/rfcdiff/" >http://tools.ietf.org/tools/rfcdiff/</a> </td></tr>
    </table>
    </body>
