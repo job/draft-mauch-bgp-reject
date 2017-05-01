@@ -110,7 +110,7 @@
             </t>
             <t>
                 Export Policy: a local policy to be applied in selecting the information contained in the Adj-RIBs-Out.
-                As described in <xref target="RFC4271">Section 3.2</xref>, the Adj-RIBs-Out contain information that has been selected to advertisement to other BGP speakers.
+                As described in <xref target="RFC4271">Section 3.2</xref>, the Adj-RIBs-Out contain information that has been selected for advertisement to other BGP speakers.
             </t>
         </section>
 
