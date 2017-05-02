@@ -94,7 +94,7 @@
             </t>
 
             <t>
-                This specification intends to improve this situation by requiring the explicit configuration of a BGP Import and Export Policy for any External BGP (EBGP) session such as customers, peers, or confederation boundaries for all enabled address families.
+                This specification intends to improve this situation by requiring the explicit configuration of both BGP Import and Export Policies for any External BGP (EBGP) session such as customers, peers, or confederation boundaries for all enabled address families.
                 When this solution is implemented, BGP speakers do not use or send routes without policies configured on EBGP sessions.
             </t>
         </section>
@@ -158,7 +158,7 @@
 
         <section anchor="Acknowledgments" title="Acknowledgments">
             <t>
-                The authors would like to thank the following people for their comments, support and review: Shane Amante, Christopher Morrow, Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi, Brian Dickson, Jeffrey Haas, John Heasley, Ignas Bagdonas, Donald Smith, Dale Worley, and Alvaro Retana.
+                The authors would like to thank the following people for their comments, support and review: Shane Amante, Christopher Morrow, Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi, Brian Dickson, Jeffrey Haas, John Heasley, Ignas Bagdonas, Donald Smith, Dale Worley, Alvaro Retana, and John Scudder.
             </t>
         </section>
 
@@ -229,7 +229,7 @@ Email: ondrej.filip@nic.cz
             This appendix is non-normative.
         </t>
         <t>
-            It is anticipated that transitioning from an acquiescent BGP implementation to a compliant BGP implementation will require a process thay may take several years.
+            It is anticipated that transitioning to a compliant BGP implementation will require a process thay may take several years.
         </t>
         <t>
             It is understood and acknowledged that operators who are taking advantage of an undefined behavior will always be surprised by changes to said behavior.
