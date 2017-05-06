@@ -98,7 +98,7 @@
                 Through codification of the aforementioned requirement, operators will benefit from consistent behaviour across different BGP implementations.
             </t>
             <t>
-                BGP speakers following this specification do not use or send routes on EBGP sessions, unless configured through policy to do otherwise.
+                BGP speakers following this specification do not use or send routes on EBGP sessions, unless configured to do otherwise.
             </t>
         </section>
 
