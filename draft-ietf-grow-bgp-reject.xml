@@ -9,7 +9,7 @@
 <rfc
     category="std"
     ipr="trust200902"
-    docName="draft-ietf-grow-bgp-reject-07"
+    docName="draft-ietf-grow-bgp-reject-08"
     updates="4271"
     submissionType="IETF">
 
@@ -95,7 +95,10 @@
 
             <t>
                 This specification intends to improve this situation by requiring the explicit configuration of both BGP Import and Export Policies for any External BGP (EBGP) session such as customers, peers, or confederation boundaries for all enabled address families.
-                When this solution is implemented, BGP speakers do not use or send routes without policies configured on EBGP sessions.
+                Through codification of the aforementioned requirement, operators will benefit from consistent behaviour across different BGP implementations.
+            </t>
+            <t>
+                BGP speakers following this specification do not use or send routes on EBGP sessions, unless configured through policy to do otherwise.
             </t>
         </section>
 
@@ -114,25 +117,9 @@
             </t>
         </section>
 
-        <section title="Solution Specification">
-            <t>
-                <list style="symbols">
-                    <t>
-                        A BGP speaker MUST consider any routes advertised by an EBGP peer ineligible for route selection (<xref target="RFC4271">section 9.1.1</xref>), if no Import Policy was configured for the peer.
-                    </t>
-                    <t>
-                        A BGP speaker MUST NOT advertise any routes to an EBGP peer, if no Export Policy was configured for the peer.
-                    </t>
-                    <t>
-                        A BGP speaker MAY provide a configuration option to disable the preceding behaviors.
-                    </t>
-                </list>
-            </t>
-        </section>
-
         <section title="Changes to RFC4271">
             <t>
-                This section describes the Updates to <xref target="RFC4271" /> that define the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session.
+                This section describes the Updates to <xref target="RFC4271" /> that define the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session. A BGP speaker MAY provide a configuration option to deviate from the following updated behaviors.
             </t>
             <t>
                 The following paragraph is added to Section 9.1 (Decision Process) after the fifth paragraph ending in "route aggregation and route information reduction":
