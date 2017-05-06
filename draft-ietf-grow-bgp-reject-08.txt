@@ -115,7 +115,7 @@ Internet-Draft             BGP Default Reject                   May 2017
 
 
    BGP speakers following this specification do not use or send routes
-   on EBGP sessions, unless configured through policy to do otherwise.
+   on EBGP sessions, unless configured to do otherwise.
 
 2.  Terminology
 
