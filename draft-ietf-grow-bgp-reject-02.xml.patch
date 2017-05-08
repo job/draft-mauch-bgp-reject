@@ -1,0 +1,76 @@
+--- draft-ietf-grow-bgp-reject-02.xml	2016-10-31 09:23:02.000000000 +0000
++++ draft-ietf-grow-bgp-reject-02.xml.adamc	2016-11-01 20:02:08.137712158 +0000
+@@ -10,7 +10,7 @@
+ 
+     <front>
+ 
+-        <title abbrev="BGP Default Reject">Default IPv4 and IPv6 Unicast EBGP Route Propagation Behavior Without Policies</title>
++        <title abbrev="BGP Default Reject">Default EBGP Route Propagation Behavior Without Policies</title>
+ 
+         <author fullname="Jared Mauch" initials="J." surname="Mauch">
+             <organization abbrev="NTT">NTT Communications</organization>
+@@ -61,8 +61,8 @@
+         <abstract>
+             <t>
+                 This document defines the default behavior of a BGP speaker
+-                when there is no import or export policy associated with
+-                a BGP session for the IPv4 or IPv6 Unicast Address Family.
++                when there is no explict import or export policy associated
++                with an EBGP session between autonomous systems.
+             </t>
+         </abstract>
+ 
+@@ -97,7 +97,7 @@
+                 information to allow all networks to reach each other. As
+                 the Internet has become more densely interconnected, the
+                 risk of a misbehaving BGP speaker poses significant risks
+-                to Internet routing.
++                to Internet routing, particularly in inter-AS situations.
+             </t>
+ 
+             <t>
+@@ -105,25 +105,35 @@
+                 by requiring the explicit configuration of a BGP import
+                 and export policy for any EBGP speaking session such as
+                 customers, peers, or confederation boundaries in a base
+-                router or VPN instances.  When this solution is implemented,
+-                BGP speakers do not accept or send routes without policies
+-                configured on EBGP sessions.
++                router or VPN instances.  When an implementation conforms to
++                this specification, BGP speakers do not accept or send
++                routes without policies configured on EBGP sessions.
+             </t>
+         </section>
+ 
+-        <section anchor="Requirements" title="Solution Requirements">
++        <section anchor="Requirements" title="Implementation Requirements">
+             <t>
+-                The following requirements for the IPv4 and IPv6 Unicast
+-                Address Family apply to the solution described in this
+-                document:
++                The following requirements are imposed upon implementations
++                compliant with this specification:
++
+                 <list style="symbols">
+-                    <t>Software MUST consider any routes from an EBGP peer invalid, if no import policy was configured.</t>
+-                    <t>Software MUST NOT advertise any routes to an EBGP peer, if no export policy was configured.</t>
++                    <t>Software MUST consider any received Unicast IPv4/IPv6 NLRI from an EBGP peer invalid, if no explicit import policy has
++                    been configured.</t>
++                    <t>Software MUST NOT advertise any Unicast IPv4/IPv6 NLRI to
++                    an EBGP peer, if no explicit export policy was configured.</t>
++                    <t>Software SHOULD apply the same logic to other non-Internet address family NLRI as well, but MAY choose alternate default policies if common application of the address family reasonably warrants it.</t>
+                     <t>Software SHOULD provide protection from internal failures preventing the advertisement and acceptance of routes.</t>
+                     <t>Software MUST operate in this mode by default.</t>
+                     <t>Software MAY provide a configuration option to disable this security capability.</t>
+                 </list>
+             </t>
++            <t>
++                The term explicit in the above requirements is intended to
++                mean that the operator must have demonstrated conscious and
++                deliberate effort to define a policy. An implementation cannot
++                provide a default policy to justify conflicting logic to that
++                defined above.
++            </t>
+         </section>
+ 
+         <section anchor="Acknowledgments" title="Acknowledgments">
