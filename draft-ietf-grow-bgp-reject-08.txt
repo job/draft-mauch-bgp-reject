@@ -88,8 +88,8 @@ Table of Contents
    Internet more stable.  Route leaks [RFC7908] are part of the problem,
    but software defects or operator misconfiguration can contribute too.
    This document updates [RFC4271] so that routes are neither imported
-   nor exported unless specifically enabled by configuration, thus
-   reducing the consequences of these problems, and so improving the
+   nor exported unless specifically enabled by configuration.  The
+   solution reduces the consequences of these problems, and improves the
    default level of Internet routing security.
 
    Many deployed BGP speakers send and accept any and all route
@@ -255,8 +255,9 @@ Appendix A.  Transition Considerations
 
    This appendix is non-normative.
 
-   It is anticipated that transitioning to a compliant BGP
-   implementation will require a process thay may take several years.
+   Transitioning to a compliant BGP implementation may require a
+   software development and release process that can take implementers
+   several years.
 
    It is understood and acknowledged that operators who are taking
    advantage of an undefined behavior will always be surprised by
@@ -273,7 +274,6 @@ A.1.  "N+1 N+2" Release Strategy
    the configuration are incomplete.  In release N+1, operators of the
    BGP implementation become aware that a configurable default exists in
    the implementation, and can prepare accordingly.  In release N+2 or
-
 
 
 
