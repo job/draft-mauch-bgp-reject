@@ -84,7 +84,8 @@
             <t>
                 BGP routing security issues need to be addressed in order to make the Internet more stable.
                 Route leaks <xref target="RFC7908" /> are part of the problem, but software defects or operator misconfiguration can contribute too. 
-                This document updates <xref target="RFC4271" /> so that routes are neither imported nor exported unless specifically enabled by configuration, thus reducing the consequences of these problems, and so improving the default level of Internet routing security.
+                This document updates <xref target="RFC4271" /> so that routes are neither imported nor exported unless specifically enabled by configuration.
+                The solution reduces the consequences of these problems, and improves the default level of Internet routing security.
             </t>
 
             <t>
@@ -217,7 +218,7 @@ Email: ondrej.filip@nic.cz
             This appendix is non-normative.
         </t>
         <t>
-            It is anticipated that transitioning to a compliant BGP implementation will require a process thay may take several years.
+            Transitioning to a compliant BGP implementation may require a software development and release process that can take implementers several years.
         </t>
         <t>
             It is understood and acknowledged that operators who are taking advantage of an undefined behavior will always be surprised by changes to said behavior.
