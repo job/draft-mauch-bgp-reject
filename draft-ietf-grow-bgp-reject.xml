@@ -84,7 +84,7 @@
             <t>
                 BGP routing security issues need to be addressed in order to make the Internet more stable.
                 Route leaks <xref target="RFC7908" /> are part of the problem, but software defects or operator misconfiguration can contribute too. 
-                This document updates <xref target="RFC4271" /> in order to improve the default level of Internet routing security.
+                This document updates <xref target="RFC4271" /> so that routes are neither imported nor exported unless specifically enabled by configuration, thus reducing the consequences of these problems, and so improving the default level of Internet routing security.
             </t>
 
             <t>
@@ -98,14 +98,14 @@
                 Through codification of the aforementioned requirement, operators will benefit from consistent behaviour across different BGP implementations.
             </t>
             <t>
-                BGP speakers following this specification do not use or send routes on EBGP sessions, unless configured to do otherwise.
+                BGP speakers following this specification do not use or send routes on EBGP sessions, unless specifically configured to do so.
             </t>
         </section>
 
         <section anchor="Terminology" title="Terminology">
             <t>
                 <xref target="RFC4271" /> describes a Policy Information Base (PIB) which contains local policies that can be applied to the information in the Routing Information Base (RIB).
-                This document distinguishes the type of policy based on its application.
+                This document distinguishes the type of a policy based on its application.
             </t>
             <t>
                 Import Policy: a local policy to be applied to the information contained in the Adj-RIBs-In.
@@ -119,10 +119,11 @@
 
         <section title="Changes to RFC4271">
             <t>
-                This section describes the Updates to <xref target="RFC4271" /> that define the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session. A BGP speaker MAY provide a configuration option to deviate from the following updated behaviors.
+                This section updates <xref target="RFC4271" /> to specify the default behavior of a BGP speaker when there are no Import or Export Policies associated with a particular EBGP session.
+                A BGP speaker MAY provide a configuration option to deviate from the following updated behaviors.
             </t>
             <t>
-                The following paragraph is added to Section 9.1 (Decision Process) after the fifth paragraph ending in "route aggregation and route information reduction":
+                The following paragraph is added to Section 9.1 (Decision Process) after the fifth paragraph, which ends in "route aggregation and route information reduction":
             </t>
             <t>
                 <list style="empty">
@@ -132,7 +133,7 @@
                </list>
            </t>
 			<t>
-                The following paragraph is added to Section 9.1.3 (Phase 3: Route Dissemination) after the third paragraph ending in "by means of an UPDATE message (see 9.2).":
+                The following paragraph is added to Section 9.1.3 (Phase 3: Route Dissemination) after the third paragraph, which ends in "by means of an UPDATE message (see 9.2).":
             </t>
             <t>
                 <list style="empty">
@@ -145,13 +146,13 @@
 
         <section anchor="Acknowledgments" title="Acknowledgments">
             <t>
-                The authors would like to thank the following people for their comments, support and review: Shane Amante, Christopher Morrow, Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi, Brian Dickson, Jeffrey Haas, John Heasley, Ignas Bagdonas, Donald Smith, Dale Worley, Alvaro Retana, and John Scudder.
+                 The authors would like to thank the following people for their comments, support and review: Shane Amante, Christopher Morrow, Robert Raszuk, Greg Skinner, Adam Chappell, Sriram Kotikalapudi, Brian Dickson, Jeffrey Haas, John Heasley, Ignas Bagdonas, Donald Smith, Dale Worley, Alvaro Retana, John Scudder, and Dale Worley.
             </t>
         </section>
 
         <section anchor="Security" title="Security Considerations">
             <t>
-                Permissive default routing policies can result in inadvertent effects such as route leaks <xref target="RFC7908" />, in general resulting in rerouting of traffic through an unexpected path.
+                Permissive default routing policies can result in inadvertent effects such as route leaks <xref target="RFC7908" />, in general resulting in routing of traffic through an unexpected path.
                 While it is possible for an operator to use monitoring to detect unexpected flows, there is no general framework that can be applied.
                 These policies also have the potential to expose software defects or misconfiguration that could have unforeseen technical and business impacting effects.
             </t>
@@ -221,9 +222,9 @@ Email: ondrej.filip@nic.cz
         <t>
             It is understood and acknowledged that operators who are taking advantage of an undefined behavior will always be surprised by changes to said behavior.
         </t>
-        <section title="N+1 N+2 Release Strategy">
+        <section title="&ldquo;N+1 N+2&rdquo; Release Strategy">
             <t>
-                An implementer could leverage an approach described as "the N+1 and N+2 release strategy".
+                An implementer could leverage an approach described as the "N+1 and N+2" release strategy.
                 In release N+1, the implementer introduces a new default configuration parameter to indicate that the BGP speaker is operating in "ebgp insecure-mode".
                 In addition to the introduction of the new parameter, an implementer could begin to display informational warnings to the operator that certain parts of the configuration are incomplete.
                 In release N+1, operators of the BGP implementation become aware that a configurable default exists in the implementation, and can prepare accordingly.
